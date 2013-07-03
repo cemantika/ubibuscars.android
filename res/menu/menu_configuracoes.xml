@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item android:id="@+id/menu_perfil"
+        android:title="@string/menu_perfil"/>
+    
+    <item android:id="@+id/menu_editarCarona"
+        android:title="@string/menu_editarCarona"/>
+    
+    
+    <item android:id="@+id/menu_delete"
+        android:title="@string/menu_deletar"/>
+    
+ 	<item android:id="@+id/menu_sobre"
+        android:title="@string/menu_sobre"/>
+    
+
+</menu>

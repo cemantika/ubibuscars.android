@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp" >
+
+        <ImageView
+            android:id="@+id/imageViewUpdateFotoPadrao"
+            android:layout_width="80dp"
+  			android:layout_height="80dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="172dp"
+            android:layout_height="84dp"
+            android:layout_weight="0.03"
+            android:orientation="vertical" >
+			<!-- 
+            <Button
+                android:id="@+id/buttonUpdateTirarFoto"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="100dp"
+                android:layout_height="31dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/bt_tirarFoto" />
+
+            <Button
+                android:id="@+id/buttonUpdateMudarFoto"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/bt_trocarFoto" />
+                
+           -->
+        </LinearLayout>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextUpdateNome"
+        android:layout_width="match_parent"
+        android:maxLength="50"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:hint="@string/hintCadastroNome"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editTextUpdateEmail"
+        android:maxLength="50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextUpdateNome"
+        android:layout_alignRight="@+id/editTextUpdateNome"
+        android:layout_below="@+id/editTextUpdateNome"
+        android:ems="10"
+        android:hint="@string/hintCadastroEmail"
+        android:inputType="textEmailAddress" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextUpdateEmail"
+        android:layout_alignRight="@+id/editTextUpdateEmail"
+        android:layout_below="@+id/editTextUpdateEmail"
+        android:weightSum="2" >
+
+        <EditText
+            android:id="@+id/editTextUpdateLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hintCadastroLogin"
+            android:inputType="textNoSuggestions" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextUpdateEmail"
+        android:layout_alignRight="@+id/editTextUpdateEmail"
+        android:layout_below="@+id/linearLayout2"
+        android:weightSum="2" >
+
+        <EditText
+            android:id="@+id/editTextUpdateNascimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLength="10"
+            android:ems="10"
+            android:hint="@string/hintCadastroNascimento"
+            android:inputType="date" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonUpdateDados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/linearLayout3"
+        android:layout_alignRight="@+id/linearLayout3"
+        android:layout_below="@+id/linearLayout3"
+        android:text="@string/bt_alterarDados" />
+
+</RelativeLayout>

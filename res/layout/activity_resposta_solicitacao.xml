@@ -1,0 +1,168 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RespostaSolicitacaoActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/imageViewMotorista"
+            android:layout_width="80dp"
+  			android:layout_height="80dp"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/imageViewSetas"
+            android:layout_width="40dp"
+  			android:layout_height="40dp"
+            android:src="@drawable/setas" />
+
+        <ImageView
+            android:id="@+id/imageViewCaronista"
+            android:layout_width="80dp"
+  			android:layout_height="80dp"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewNomeMotorista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="14dp"
+        android:text="NomeMotorista " />
+
+    <TextView
+        android:id="@+id/textViewNomeCaronista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginLeft="35dp"
+        android:layout_toRightOf="@+id/textViewNomeMotorista"
+        android:text="NomeCaronista" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewNomeMotorista"
+        android:layout_below="@+id/textViewNomeCaronista"
+        android:layout_marginTop="22dp"
+        android:text="@string/textAnunciarOrigem" />
+
+    <TextView
+        android:id="@+id/textViewRespostaOrigem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:text="@string/textSolicitaHorario" />
+
+    <TextView
+        android:id="@+id/textViewRespostaHorarioOrigem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/textViewRespostaOrigem"
+        android:layout_alignParentRight="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:text="@string/textAnunciarDestino" />
+
+    <TextView
+        android:id="@+id/textViewRespostaDestino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignLeft="@+id/textViewRespostaHorarioOrigem"
+        android:layout_alignRight="@+id/textViewRespostaHorarioOrigem"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_below="@+id/textView4"
+        android:text="@string/textSolicitaHorario" />
+
+    <TextView
+        android:id="@+id/textViewRespostaHorarioDestino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/textViewRespostaDestino"
+        android:layout_alignParentRight="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewRespostaStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewRespostaHorarioDestino"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="Status do pedido" />
+
+    <Button
+        android:id="@+id/buttonRespostaAceitar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textViewRespostaStatus"
+        android:layout_marginTop="18dp"
+        android:text="@string/btRespostaAceitar" />
+
+    <Button
+        android:id="@+id/buttonRespostaRecusar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonRespostaAceitar"
+        android:layout_alignRight="@+id/buttonRespostaAceitar"
+        android:layout_below="@+id/buttonRespostaAceitar"
+        android:text="@string/btRespostaRecusar" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewNomeCaronista"
+        android:layout_alignTop="@+id/textViewRespostaOrigem"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</RelativeLayout>

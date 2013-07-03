@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfilActivity" >
+
+    <ImageView
+        android:id="@+id/imageViewPerfilFoto"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="34dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textViewPerfilNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/imageViewPerfilFoto"
+        android:layout_marginLeft="32dp"
+        android:layout_toRightOf="@+id/imageViewPerfilFoto"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textViewPerfilCurso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewPerfilNome"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textViewPerfilNome"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageViewPerfilFoto"
+        android:layout_below="@+id/imageViewPerfilFoto"
+        android:layout_marginTop="25dp"
+        android:text="Email: " />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="16dp"
+        android:text="Usuário: " />
+
+    <TextView
+        android:id="@+id/textViewPerfilEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/imageViewPerfilFoto" />
+
+    <TextView
+        android:id="@+id/textViewPerfilUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/textViewPerfilEmail"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:id="@+id/buttonPerfilEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewPerfilUsuario"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:text="Editar Perfil" />
+
+</RelativeLayout>

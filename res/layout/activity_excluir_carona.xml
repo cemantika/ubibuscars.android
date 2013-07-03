@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imageViewExcluiFoto"
+        android:layout_width="80dp"
+  		android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textViewExcluiCaronaNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageViewExcluiFoto"
+        android:layout_marginLeft="41dp"
+        android:layout_toRightOf="@+id/imageViewExcluiFoto"
+        android:text="Nome do Usuario" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageViewExcluiFoto"
+        android:layout_below="@+id/imageViewExcluiFoto"
+        android:layout_marginTop="44dp"
+        android:text="@string/textAnunciarOrigem" />
+
+    <TextView
+        android:id="@+id/textViewExcluiOrigem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/textView2"
+        android:text="Local de Origem" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="15dp"
+        android:text="@string/textSolicitaHorario" />
+
+    <TextView
+        android:id="@+id/textViewExcluiHorarioOrigem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/textViewExcluiOrigem"
+        android:text="HOrário da Carona" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="15dp"
+        android:text="@string/textAnunciarDestino" />
+
+    <TextView
+        android:id="@+id/textViewExcluiDestino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignLeft="@+id/textViewExcluiHorarioOrigem"
+        android:text="Local de Destino" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="15dp"
+        android:text="@string/textSolicitaHorario" />
+
+    <TextView
+        android:id="@+id/textViewExcluiHorarioDestino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignLeft="@+id/textViewExcluiDestino"
+        android:text="TextView" />
+
+
+    <TextView
+        android:id="@+id/textViewEcluiTipoCarona"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView2"
+        android:layout_alignLeft="@+id/textViewExcluiCaronaNome"
+        android:text="Pede/recebe" />
+
+    <Button
+        android:id="@+id/buttonEcluirCarona"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewExcluiHorarioDestino"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:text="@string/btExcluirSolicitacao" />
+
+</RelativeLayout>
