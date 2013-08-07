@@ -1,6 +1,5 @@
 
 
-
 # GIT
 Leia as recomendações do modelo de branches utilizado pelo grupo: http://nvie.com/posts/a-successful-git-branching-model/
 
@@ -19,3 +18,8 @@ Leia as recomendações do modelo de branches utilizado pelo grupo: http://nvie.
 
 5. Para usar o google maps é necessário fazer a chave de acesso e colocá-la no android manifest. O link abaixo explica o processo:
 https://developers.google.com/maps/documentation/android/start?hl=pt-br
+
+# Recursos
+
+Base de dados para testar o o projeto:
+https://dl.dropboxusercontent.com/u/10935623/CEManTIKA/ubibuscars.sql
