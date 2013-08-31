@@ -6,7 +6,7 @@ Instruções para instalação do banco PostGreSQL
 
 1) Download do PostGreSQL
 
-Faça download da versão 9.1.9 32 bits:  
+Faça download da versão 9.1.9 32 bits de acordo com seu sistema operacional:  
 
 http://www.enterprisedb.com/products-services-training/pgdownload
 
@@ -15,6 +15,8 @@ Obs. Mesmo se seu sistema for 64 bits, instale a versão 32 bits.
 
 2) Instalação
 
+    2.1 Next, Next, Next... na etapa Password, digite uma senha, e Next (guarde ela pois será usada depois); 
+    
 
 
 3) Importando o banco
