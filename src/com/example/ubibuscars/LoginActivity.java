@@ -98,9 +98,13 @@ public class LoginActivity extends Activity {
 		@Override
 		protected Boolean doInBackground(String... params) {
 
+			// brutal force
+//			setId_usuario(Integer.valueOf(24));
+//			return true;
+			
 			Boolean usuarioExiste = false;
-			String readJson = CustomHttpPost.readJson(Servidor.getServidor()
-					+ "/buscaUsuarios.php");
+			String servidorURI = Servidor.getServidor() + "/buscaUsuarios.php";
+			String readJson = CustomHttpPost.readJson(servidorURI);
 			try {
 				JSONArray jsonArray = new JSONArray(readJson);
 

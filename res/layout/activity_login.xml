@@ -26,7 +26,7 @@
         android:ems="10"
         android:hint="@string/hintCadastroEmail"
         android:inputType="textEmailAddress"
-        android:text="newuser@gmail.com" >
+        android:text="vhaldir@gmail.com" >
 
         <requestFocus />
     </EditText>

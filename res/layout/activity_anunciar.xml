@@ -26,8 +26,10 @@
         android:ems="10"
         android:hint="@string/hintAnunciarEndereco"
         android:focusable="false"
+        android:onClick="escolherEndOrigem"
         android:inputType="textNoSuggestions"
-        android:onClick="escolherEndOrigem" >
+        >
+        
 
         <requestFocus />
     </EditText>
@@ -67,9 +69,10 @@
         android:layout_below="@+id/textView2"
         android:ems="10"
         android:hint="@string/hintAnunciarEndereco"
-        android:focusable="false"
+		android:focusable="false"        
         android:inputType="textPersonName"
         android:onClick="escolherEndDestino" />
+    
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -139,7 +142,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/caronaVagas"
+        android:layout_below="@+id/editVagas"
         android:text="@string/btCadastroCadastrar" />
 
 </RelativeLayout>

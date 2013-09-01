@@ -51,7 +51,7 @@ public class AnuncioCaronaActivity extends Activity {
 		edt_enderecoDestino = (EditText) findViewById(R.id.editTextDestinoEndereco);
 		edt_horarioOrigem = (EditText) findViewById(R.id.editTextOrigemHorario);
 		edt_horarioDestino = (EditText) findViewById(R.id.editTextDestinoHorario);
-		spi_vagas = (Spinner) findViewById(R.id.editVagas);
+		spi_vagas = (Spinner) findViewById(R.id.editVagas); 
 
 		//radioG_tipo = (RadioGroup) findViewById(R.id.radioGroupAnunciar);
 
@@ -180,8 +180,8 @@ public class AnuncioCaronaActivity extends Activity {
 				nameValuePairs.add(new BasicNameValuePair("horarioDestino",
 						edt_horarioDestino.getText().toString()));
 				nameValuePairs.add(new BasicNameValuePair("vagas",
-						spi_vagas.toString()));
-
+						spi_vagas.getSelectedItem().toString()));
+				
 				nameValuePairs.add(new BasicNameValuePair("tipo", "1"));
 //				if (radioG_tipo.getCheckedRadioButtonId() == R.id.radioOferece) {
 //					nameValuePairs.add(new BasicNameValuePair("tipo", "1"));
@@ -327,7 +327,7 @@ public class AnuncioCaronaActivity extends Activity {
 		edt_enderecoDestino.setText("");
 		edt_horarioOrigem.setText("");
 		edt_horarioDestino.setText("");
-	//	spi_vagas.
+		spi_vagas.setSelection(0);
 	}
 
 	public static String getEndOrigem() {
