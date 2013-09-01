@@ -44,7 +44,7 @@ public class AlteraDadosActivity extends Activity {
 	private Bitmap bitmap;
 	private Button bt_tiraFoto, bt_alteraFoto, bt_alteraDados;
 	private EditText edt_alteraNome, edt_alteraEmail, edt_alteraLogin,
-			edt_alteraNascimento;
+			edt_alteraNascimento, edt_alterarCarroParticularLugares;
 	private ImageView imgV_novaFoto;
 
 	@Override
@@ -58,11 +58,12 @@ public class AlteraDadosActivity extends Activity {
 		bt_alteraDados = (Button) findViewById(R.id.buttonUpdateDados);
 
 		edt_alteraEmail = (EditText) findViewById(R.id.editTextUpdateEmail);
-		edt_alteraLogin = (EditText) findViewById(R.id.editTextUpdateLogin);
+		//edt_alteraLogin = (EditText) findViewById(R.id.editTextUpdateLogin);
 		edt_alteraNascimento = (EditText) findViewById(R.id.editTextUpdateNascimento);
 		edt_alteraNome = (EditText) findViewById(R.id.editTextUpdateNome);
 
-		imgV_novaFoto = (ImageView) findViewById(R.id.imageViewUpdateFotoPadrao);
+		
+		//imgV_novaFoto = (ImageView) findViewById(R.id.imageViewUpdateFotoPadrao);
 
 		/*
 		 * String readJson = CustomHttpPost.readJson(Servidor.getServidor() +
@@ -302,6 +303,7 @@ public class AlteraDadosActivity extends Activity {
 					edt_alteraNascimento.getText().toString()));
 			nameValuePairs.add(new BasicNameValuePair("id", String
 					.valueOf(LoginActivity.getId_usuario())));
+			
 
 			/*
 			 * BitmapDrawable drawable = (BitmapDrawable)

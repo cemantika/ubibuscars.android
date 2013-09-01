@@ -90,6 +90,27 @@
             android:inputType="time" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout2"
+        android:text="Vagas disponíveis:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	<Spinner
+        android:id="@+id/editVagas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/quantidade_vagas"
+        android:prompt="@string/hintLugares"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/textView3"
+	/>
+    
+    <!-- 
     <RadioGroup
         android:id="@+id/radioGroupAnunciar"
         android:layout_width="wrap_content"
@@ -111,13 +132,14 @@
             android:layout_height="wrap_content"
             android:text="@string/radioOferece" />
     </RadioGroup>
+    -->
 
     <Button
         android:id="@+id/buttonAnunciarCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/radioGroupAnunciar"
+        android:layout_below="@+id/caronaVagas"
         android:text="@string/btCadastroCadastrar" />
 
 </RelativeLayout>
