@@ -57,7 +57,11 @@ public class PrincipalActivity extends TabActivity {
                 .setContent(new Intent(this, SolicitacoesDeCaronaActivity.class)
                         .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)));
         
-     
+        // 	Tab para mostrar todas as caronas
+        tabHost.addTab(tabHost.newTabSpec("Sugestões")
+                .setIndicator("Sugestões", getResources().getDrawable(R.drawable.exclamation_24x24))
+                .setContent(new Intent(this, SugestoesActivity.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)));
         
         tabHost.setOnTabChangedListener(new OnTabChangeListener() {
 			
