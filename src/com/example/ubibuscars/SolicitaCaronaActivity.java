@@ -23,7 +23,7 @@ import android.widget.TextView;
 public class SolicitaCaronaActivity extends Activity {
 	
 	private Button bt_solicitar;
-	private TextView txt_nome, txt_tipoCarona, txt_localOrigem, txt_localDestino, txt_horarioOrigem, txt_horarioDestino;
+	private TextView txt_nome, txt_tipoCarona, txt_localOrigem, txt_localDestino, txt_horarioOrigem, txt_horarioDestino, txt_vagasDisponiveis;
 	private EditText edt_mensagem;
 	private ImageView img_usuarioCarona;
 	private String idCarona;
@@ -50,6 +50,7 @@ public class SolicitaCaronaActivity extends Activity {
         String horarioOrigem = in.getStringExtra("horario_origem");
         String horarioDestino = in.getStringExtra("horario_destino");
         String tipo = in.getStringExtra("tipo");
+        String vagasDisponiveis = in.getStringExtra("vagas_disponiveis");        
         
         bt_solicitar = (Button) findViewById(R.id.buttonEnviarSolicitacao);
         
@@ -59,6 +60,7 @@ public class SolicitaCaronaActivity extends Activity {
         txt_localDestino = (TextView) findViewById(R.id.textViewSolicitaDestino);
         txt_horarioOrigem = (TextView) findViewById(R.id.textViewSolicitaHorarioOrigem);
         txt_horarioDestino = (TextView) findViewById(R.id.textViewSolicitaHorarioDestino);
+        txt_vagasDisponiveis = (TextView) findViewById(R.id.textViewVagasDisponiveis);
         
         //img_usuarioCarona = (ImageView) findViewById(R.id.imageViewSolicitacaoFoto);
         
@@ -73,10 +75,14 @@ public class SolicitaCaronaActivity extends Activity {
         txt_horarioOrigem.setText(horarioOrigem);
         txt_horarioDestino.setText(horarioDestino);
         txt_tipoCarona.setText("Usu‡rio "+tipo+" carona");
-        
+        txt_vagasDisponiveis.setText(vagasDisponiveis);
        // img_usuarioCarona.setImageBitmap(CustomHttpPost.getImagem(Servidor.getServidor()+"/buscaImagemUsuario.php?cod="+idUsuario));
         
-        if(idUsuario.equals(String.valueOf(LoginActivity.getId_usuario()))){
+        if(
+        	idUsuario.equals(String.valueOf(LoginActivity.getId_usuario()))
+        	||
+        	vagasDisponiveis.equals("0")
+        ){
 			bt_solicitar.setVisibility(View.INVISIBLE);
 			edt_mensagem.setVisibility(View.INVISIBLE);
 			

@@ -1,7 +1,12 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
+
+<RelativeLayout android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
     <ImageView
         android:id="@+id/imageViewSolicitacaoFoto"
@@ -94,13 +99,32 @@
         android:layout_alignBottom="@+id/textView4"
         android:layout_alignLeft="@+id/textViewSolicitaDestino"
         android:text="TextView" />
+    
+    <!-- CARONAS -->
+    <TextView
+        android:id="@+id/textLabelVagas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="15dp"
+        android:text="Vagas:" />
+    <TextView
+        android:id="@+id/textViewVagasDisponiveis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textLabelVagas"
+        android:layout_alignBottom="@+id/textLabelVagas"
+        android:layout_alignLeft="@+id/textViewSolicitaHorarioDestino"
+        android:text="TextView" />
+    <!-- CARONAS -->
 
     <EditText
         android:id="@+id/editTextSolicitaMensagem"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/textLabelVagas"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Digite uma mensagem"
@@ -126,3 +150,4 @@
         android:text="Pede/recebe" />
 
 </RelativeLayout>
+</ScrollView>

@@ -206,19 +206,20 @@ containing a value of this type.
         public static final int ufba_img=0x7f02002b;
     }
     public static final class id {
-        public static final int LinearLayout2=0x7f050058;
+        public static final int LinearLayout2=0x7f05005a;
         public static final int LoginEditText=0x7f050031;
         public static final int RelativeLayout1=0x7f05000b;
         public static final int SenhaEditText=0x7f050032;
-        public static final int TextNomeUsuario=0x7f05005a;
-        public static final int action_settings=0x7f050064;
+        public static final int TextNomeUsuario=0x7f05005c;
+        public static final int TextVagasDisponiveis=0x7f05005d;
+        public static final int action_settings=0x7f050067;
         public static final int button1=0x7f050039;
         public static final int buttonAnunciarCadastrar=0x7f050016;
         public static final int buttonCadastrar=0x7f050034;
         public static final int buttonCadastroCadastrar=0x7f050022;
         public static final int buttonEcluirCarona=0x7f05002f;
         public static final int buttonEntrar=0x7f050033;
-        public static final int buttonEnviarSolicitacao=0x7f050056;
+        public static final int buttonEnviarSolicitacao=0x7f050058;
         public static final int buttonMostrarSenha=0x7f050025;
         public static final int buttonMudarFoto=0x7f050019;
         public static final int buttonPerfilEditar=0x7f05003f;
@@ -238,7 +239,7 @@ containing a value of this type.
         public static final int editTextOrigemEndereco=0x7f05000d;
         public static final int editTextOrigemHorario=0x7f05000f;
         public static final int editTextRepitaSenha=0x7f050038;
-        public static final int editTextSolicitaMensagem=0x7f050055;
+        public static final int editTextSolicitaMensagem=0x7f050057;
         public static final int editTextUpdateEmail=0x7f050008;
         public static final int editTextUpdateNascimento=0x7f05000a;
         public static final int editTextUpdateNome=0x7f050007;
@@ -256,18 +257,18 @@ containing a value of this type.
         public static final int imageViewPerfilFoto=0x7f05003a;
         public static final int imageViewSetas=0x7f050041;
         public static final int imageViewSolicitacaoFoto=0x7f05004f;
-        public static final int imageViewTipoCarona=0x7f050059;
-        public static final int imageViewTipoSolicitacao=0x7f05005d;
+        public static final int imageViewTipoCarona=0x7f05005b;
+        public static final int imageViewTipoSolicitacao=0x7f050060;
         public static final int informacoesPessoaisTitle=0x7f050005;
         public static final int linearLayout1=0x7f05000e;
         public static final int linearLayout2=0x7f050012;
         public static final int linearLayout3=0x7f050009;
-        public static final int menu_delete=0x7f050067;
-        public static final int menu_editarCarona=0x7f050066;
-        public static final int menu_forgot_pass=0x7f050069;
-        public static final int menu_perfil=0x7f050065;
-        public static final int menu_settings=0x7f050063;
-        public static final int menu_sobre=0x7f050068;
+        public static final int menu_delete=0x7f05006a;
+        public static final int menu_editarCarona=0x7f050069;
+        public static final int menu_forgot_pass=0x7f05006c;
+        public static final int menu_perfil=0x7f050068;
+        public static final int menu_settings=0x7f050066;
+        public static final int menu_sobre=0x7f05006b;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int radioCadastroFeminino=0x7f050020;
@@ -275,18 +276,19 @@ containing a value of this type.
         public static final int radioGroupCadastroSexo=0x7f05001e;
         public static final int satellite=0x7f050002;
         public static final int terrain=0x7f050003;
-        public static final int textDestino=0x7f05005f;
-        public static final int textEndDest=0x7f05005c;
-        public static final int textEndOrig=0x7f05005b;
-        public static final int textOrigem=0x7f05005e;
-        public static final int textSituacao=0x7f050062;
-        public static final int textUsuarioSolicitacoes=0x7f050060;
+        public static final int textDestino=0x7f050062;
+        public static final int textEndDest=0x7f05005f;
+        public static final int textEndOrig=0x7f05005e;
+        public static final int textLabelVagas=0x7f050055;
+        public static final int textOrigem=0x7f050061;
+        public static final int textSituacao=0x7f050065;
+        public static final int textUsuarioSolicitacoes=0x7f050063;
         public static final int textView1=0x7f05000c;
         public static final int textView2=0x7f050010;
         public static final int textView3=0x7f050014;
         public static final int textView4=0x7f05002c;
         public static final int textView5=0x7f05002a;
-        public static final int textView6=0x7f050061;
+        public static final int textView6=0x7f050064;
         public static final int textViewCadastroSexo=0x7f050021;
         public static final int textViewEcluiTipoCarona=0x7f05002e;
         public static final int textViewEsqueciSenha=0x7f050035;
@@ -311,7 +313,8 @@ containing a value of this type.
         public static final int textViewSolicitaHorarioDestino=0x7f050054;
         public static final int textViewSolicitaHorarioOrigem=0x7f050052;
         public static final int textViewSolicitaOrigem=0x7f050051;
-        public static final int textViewTipoCarona=0x7f050057;
+        public static final int textViewTipoCarona=0x7f050059;
+        public static final int textViewVagasDisponiveis=0x7f050056;
     }
     public static final class layout {
         public static final int activity_altera_dados=0x7f030000;
