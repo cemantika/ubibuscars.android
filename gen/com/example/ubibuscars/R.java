@@ -8,6 +8,9 @@
 package com.example.ubibuscars;
 
 public final class R {
+    public static final class array {
+        public static final int quantidade_vagas=0x7f080000;
+    }
     public static final class attr {
         /** <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
@@ -208,65 +211,66 @@ containing a value of this type.
         public static final int user_profile=0x7f020030;
     }
     public static final class id {
-        public static final int LinearLayout2=0x7f05005b;
-        public static final int LoginEditText=0x7f050034;
-        public static final int RelativeLayout1=0x7f05000e;
-        public static final int SenhaEditText=0x7f050035;
-        public static final int TextNomeUsuario=0x7f05005d;
+        public static final int LinearLayout2=0x7f05005a;
+        public static final int LoginEditText=0x7f050031;
+        public static final int RelativeLayout1=0x7f05000b;
+        public static final int SenhaEditText=0x7f050032;
+        public static final int TextNomeUsuario=0x7f05005c;
+        public static final int TextVagasDisponiveis=0x7f05005d;
         public static final int action_settings=0x7f05006c;
-        public static final int button1=0x7f05003c;
-        public static final int buttonAnunciarCadastrar=0x7f050018;
-        public static final int buttonCadastrar=0x7f050037;
-        public static final int buttonCadastroCadastrar=0x7f050024;
-        public static final int buttonEcluirCarona=0x7f050032;
-        public static final int buttonEntrar=0x7f050036;
-        public static final int buttonEnviarSolicitacao=0x7f050059;
-        public static final int buttonMostrarSenha=0x7f050027;
-        public static final int buttonMudarFoto=0x7f05001b;
-        public static final int buttonPerfilEditar=0x7f050042;
-        public static final int buttonRespostaAceitar=0x7f05004d;
-        public static final int buttonRespostaRecusar=0x7f05004e;
-        public static final int buttonTirarFoto=0x7f05001a;
-        public static final int buttonUpdateDados=0x7f05000d;
-        public static final int editTextCadastroEmail=0x7f05001d;
-        public static final int editTextCadastroNascimento=0x7f05001f;
-        public static final int editTextCadastroNome=0x7f05001c;
-        public static final int editTextCadastroSenha=0x7f05001e;
-        public static final int editTextDestinoEndereco=0x7f050013;
-        public static final int editTextDestinoHorario=0x7f050014;
-        public static final int editTextEsquSenhaEmail=0x7f050025;
-        public static final int editTextEsquSenhaNascimento=0x7f050026;
-        public static final int editTextNovaSenha=0x7f05003a;
-        public static final int editTextOrigemEndereco=0x7f050010;
-        public static final int editTextOrigemHorario=0x7f050011;
-        public static final int editTextRepitaSenha=0x7f05003b;
-        public static final int editTextSolicitaMensagem=0x7f050058;
+        public static final int button1=0x7f050039;
+        public static final int buttonAnunciarCadastrar=0x7f050016;
+        public static final int buttonCadastrar=0x7f050034;
+        public static final int buttonCadastroCadastrar=0x7f050022;
+        public static final int buttonEcluirCarona=0x7f05002f;
+        public static final int buttonEntrar=0x7f050033;
+        public static final int buttonEnviarSolicitacao=0x7f050058;
+        public static final int buttonMostrarSenha=0x7f050025;
+        public static final int buttonMudarFoto=0x7f050019;
+        public static final int buttonPerfilEditar=0x7f05003f;
+        public static final int buttonRespostaAceitar=0x7f05004a;
+        public static final int buttonRespostaRecusar=0x7f05004b;
+        public static final int buttonTirarFoto=0x7f050018;
+        public static final int buttonUpdateDados=0x7f050006;
+        public static final int editTextCadastroEmail=0x7f05001b;
+        public static final int editTextCadastroNascimento=0x7f05001d;
+        public static final int editTextCadastroNome=0x7f05001a;
+        public static final int editTextCadastroSenha=0x7f05001c;
+        public static final int editTextDestinoEndereco=0x7f050011;
+        public static final int editTextDestinoHorario=0x7f050013;
+        public static final int editTextEsquSenhaEmail=0x7f050023;
+        public static final int editTextEsquSenhaNascimento=0x7f050024;
+        public static final int editTextNovaSenha=0x7f050037;
+        public static final int editTextOrigemEndereco=0x7f05000d;
+        public static final int editTextOrigemHorario=0x7f05000f;
+        public static final int editTextRepitaSenha=0x7f050038;
+        public static final int editTextSolicitaMensagem=0x7f050057;
         public static final int editTextUpdateEmail=0x7f050008;
-        public static final int editTextUpdateLogin=0x7f05000a;
-        public static final int editTextUpdateNascimento=0x7f05000c;
+        public static final int editTextUpdateNascimento=0x7f05000a;
         public static final int editTextUpdateNome=0x7f050007;
-        public static final int fragMap=0x7f050039;
+        public static final int editVagas=0x7f050015;
+        public static final int fragMap=0x7f050036;
         public static final int hybrid=0x7f050004;
         public static final int imageSugestao=0x7f050067;
         public static final int imageSugestaoState=0x7f05006a;
-        public static final int imageView1=0x7f050033;
-        public static final int imageView2=0x7f05004f;
-        public static final int imageView3=0x7f050050;
-        public static final int imageView4=0x7f050051;
-        public static final int imageViewCaronista=0x7f050045;
-        public static final int imageViewExcluiFoto=0x7f050028;
-        public static final int imageViewFotoPadrao=0x7f050019;
-        public static final int imageViewMotorista=0x7f050043;
-        public static final int imageViewPerfilFoto=0x7f05003d;
-        public static final int imageViewSetas=0x7f050044;
-        public static final int imageViewSolicitacaoFoto=0x7f050052;
-        public static final int imageViewTipoCarona=0x7f05005c;
+        public static final int imageView1=0x7f050030;
+        public static final int imageView2=0x7f05004c;
+        public static final int imageView3=0x7f05004d;
+        public static final int imageView4=0x7f05004e;
+        public static final int imageViewCaronista=0x7f050042;
+        public static final int imageViewExcluiFoto=0x7f050026;
+        public static final int imageViewFotoPadrao=0x7f050017;
+        public static final int imageViewMotorista=0x7f050040;
+        public static final int imageViewPerfilFoto=0x7f05003a;
+        public static final int imageViewSetas=0x7f050041;
+        public static final int imageViewSolicitacaoFoto=0x7f05004f;
+        public static final int imageViewTipoCarona=0x7f05005b;
         public static final int imageViewTipoSolicitacao=0x7f050060;
-        public static final int imageViewUpdateFotoPadrao=0x7f050006;
+        public static final int informacoesPessoaisTitle=0x7f050005;
         public static final int layoutSugestoes=0x7f050066;
-        public static final int linearLayout1=0x7f050005;
-        public static final int linearLayout2=0x7f050009;
-        public static final int linearLayout3=0x7f05000b;
+        public static final int linearLayout1=0x7f05000e;
+        public static final int linearLayout2=0x7f050012;
+        public static final int linearLayout3=0x7f050009;
         public static final int menu_delete=0x7f05006f;
         public static final int menu_editarCarona=0x7f05006e;
         public static final int menu_forgot_pass=0x7f050071;
@@ -275,53 +279,52 @@ containing a value of this type.
         public static final int menu_sobre=0x7f050070;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
-        public static final int radioCadastroFeminino=0x7f050022;
-        public static final int radioCadastroMasculino=0x7f050021;
-        public static final int radioGroupAnunciar=0x7f050015;
-        public static final int radioGroupCadastroSexo=0x7f050020;
-        public static final int radioOferece=0x7f050017;
-        public static final int radioPede=0x7f050016;
+        public static final int radioCadastroFeminino=0x7f050020;
+        public static final int radioCadastroMasculino=0x7f05001f;
+        public static final int radioGroupCadastroSexo=0x7f05001e;
         public static final int satellite=0x7f050002;
         public static final int subTextSugestao=0x7f050069;
         public static final int terrain=0x7f050003;
         public static final int textDestino=0x7f050062;
         public static final int textEndDest=0x7f05005f;
         public static final int textEndOrig=0x7f05005e;
+        public static final int textLabelVagas=0x7f050055;
         public static final int textOrigem=0x7f050061;
         public static final int textSituacao=0x7f050065;
         public static final int textSugestao=0x7f050068;
         public static final int textUsuarioSolicitacoes=0x7f050063;
-        public static final int textView1=0x7f05000f;
-        public static final int textView2=0x7f050012;
-        public static final int textView3=0x7f05002b;
-        public static final int textView4=0x7f05002f;
-        public static final int textView5=0x7f05002d;
+        public static final int textView1=0x7f05000c;
+        public static final int textView2=0x7f050010;
+        public static final int textView3=0x7f050014;
+        public static final int textView4=0x7f05002c;
+        public static final int textView5=0x7f05002a;
         public static final int textView6=0x7f050064;
-        public static final int textViewCadastroSexo=0x7f050023;
-        public static final int textViewEcluiTipoCarona=0x7f050031;
-        public static final int textViewEsqueciSenha=0x7f050038;
-        public static final int textViewExcluiCaronaNome=0x7f050029;
-        public static final int textViewExcluiDestino=0x7f05002e;
-        public static final int textViewExcluiHorarioDestino=0x7f050030;
-        public static final int textViewExcluiHorarioOrigem=0x7f05002c;
-        public static final int textViewExcluiOrigem=0x7f05002a;
-        public static final int textViewNomeCaronista=0x7f050047;
-        public static final int textViewNomeMotorista=0x7f050046;
-        public static final int textViewNomeUsuario=0x7f050053;
-        public static final int textViewPerfilCurso=0x7f05003f;
-        public static final int textViewPerfilEmail=0x7f050040;
-        public static final int textViewPerfilNome=0x7f05003e;
-        public static final int textViewPerfilUsuario=0x7f050041;
-        public static final int textViewRespostaDestino=0x7f05004a;
-        public static final int textViewRespostaHorarioDestino=0x7f05004b;
-        public static final int textViewRespostaHorarioOrigem=0x7f050049;
-        public static final int textViewRespostaOrigem=0x7f050048;
-        public static final int textViewRespostaStatus=0x7f05004c;
-        public static final int textViewSolicitaDestino=0x7f050056;
-        public static final int textViewSolicitaHorarioDestino=0x7f050057;
-        public static final int textViewSolicitaHorarioOrigem=0x7f050055;
-        public static final int textViewSolicitaOrigem=0x7f050054;
-        public static final int textViewTipoCarona=0x7f05005a;
+        public static final int textViewCadastroSexo=0x7f050021;
+        public static final int textViewEcluiTipoCarona=0x7f05002e;
+        public static final int textViewEsqueciSenha=0x7f050035;
+        public static final int textViewExcluiCaronaNome=0x7f050027;
+        public static final int textViewExcluiDestino=0x7f05002b;
+        public static final int textViewExcluiHorarioDestino=0x7f05002d;
+        public static final int textViewExcluiHorarioOrigem=0x7f050029;
+        public static final int textViewExcluiOrigem=0x7f050028;
+        public static final int textViewNomeCaronista=0x7f050044;
+        public static final int textViewNomeMotorista=0x7f050043;
+        public static final int textViewNomeUsuario=0x7f050050;
+        public static final int textViewPerfilCurso=0x7f05003c;
+        public static final int textViewPerfilEmail=0x7f05003d;
+        public static final int textViewPerfilNome=0x7f05003b;
+        public static final int textViewPerfilUsuario=0x7f05003e;
+        public static final int textViewRespostaDestino=0x7f050047;
+        public static final int textViewRespostaHorarioDestino=0x7f050048;
+        public static final int textViewRespostaHorarioOrigem=0x7f050046;
+        public static final int textViewRespostaOrigem=0x7f050045;
+        public static final int textViewRespostaStatus=0x7f050049;
+        public static final int textViewSolicitaDestino=0x7f050053;
+        public static final int textViewSolicitaHorarioDestino=0x7f050054;
+        public static final int textViewSolicitaHorarioOrigem=0x7f050052;
+        public static final int textViewSolicitaOrigem=0x7f050051;
+        public static final int textViewTipoCarona=0x7f050059;
+        public static final int textViewVagasDisponiveis=0x7f050056;
     }
     public static final class layout {
         public static final int activity_altera_dados=0x7f030000;
@@ -346,13 +349,13 @@ containing a value of this type.
         public static final int list_item_sugestoes=0x7f030013;
     }
     public static final class menu {
-        public static final int activity_nova_senha=0x7f090000;
-        public static final int activity_perfil=0x7f090001;
-        public static final int excluir_carona=0x7f090002;
-        public static final int menu_configuracoes=0x7f090003;
-        public static final int menu_forgot_pass=0x7f090004;
-        public static final int minhas_caronas=0x7f090005;
-        public static final int sobre=0x7f090006;
+        public static final int activity_nova_senha=0x7f0a0000;
+        public static final int activity_perfil=0x7f0a0001;
+        public static final int excluir_carona=0x7f0a0002;
+        public static final int menu_configuracoes=0x7f0a0003;
+        public static final int menu_forgot_pass=0x7f0a0004;
+        public static final int minhas_caronas=0x7f0a0005;
+        public static final int sobre=0x7f0a0006;
     }
     public static final class string {
         public static final int action_settings=0x7f060047;
@@ -450,6 +453,7 @@ containing a value of this type.
         public static final int hello_world=0x7f06002f;
         public static final int hintAnunciarEndereco=0x7f06002a;
         public static final int hintAnunciarHorario=0x7f06002b;
+        public static final int hintCadastroCarroParticularNome=0x7f06004d;
         public static final int hintCadastroEmail=0x7f060019;
         public static final int hintCadastroLogin=0x7f060020;
         public static final int hintCadastroNascimento=0x7f060022;
@@ -457,6 +461,7 @@ containing a value of this type.
         public static final int hintCadastroSenha=0x7f060021;
         public static final int hintLoginLogin=0x7f06001c;
         public static final int hintLoginSenha=0x7f06001d;
+        public static final int hintLugares=0x7f06004c;
         public static final int hintSolicitaMensagem=0x7f060034;
         public static final int menu_deletar=0x7f06003c;
         public static final int menu_editarCarona=0x7f060041;
@@ -490,7 +495,7 @@ containing a value of this type.
         public static final int txt_esqueci_senha_email=0x7f06003f;
     }
     public static final class style {
-        public static final int AppTheme=0x7f080000;
+        public static final int AppTheme=0x7f090000;
     }
     public static final class styleable {
         /** Attributes that can be used with a MapAttrs.

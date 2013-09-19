@@ -26,7 +26,7 @@
         android:ems="10"
         android:hint="@string/hintCadastroEmail"
         android:inputType="textEmailAddress"
-        android:text="rafael@terra.com.br" >
+        android:text="mjr@gmail.com" >
 
         <requestFocus />
     </EditText>

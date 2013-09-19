@@ -20,14 +20,16 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 
 public class AnuncioCaronaActivity extends Activity {
 
 	private EditText edt_enderecoOrigem, edt_enderecoDestino,
 			edt_horarioOrigem, edt_horarioDestino;
-	private RadioGroup radioG_tipo;
+	//private RadioGroup radioG_tipo;
 	private Button bt_anunciar;
+	private Spinner spi_vagas;
 
 	private static String endOrigem;
 	private static String endDestino;
@@ -49,8 +51,9 @@ public class AnuncioCaronaActivity extends Activity {
 		edt_enderecoDestino = (EditText) findViewById(R.id.editTextDestinoEndereco);
 		edt_horarioOrigem = (EditText) findViewById(R.id.editTextOrigemHorario);
 		edt_horarioDestino = (EditText) findViewById(R.id.editTextDestinoHorario);
+		spi_vagas = (Spinner) findViewById(R.id.editVagas); 
 
-		radioG_tipo = (RadioGroup) findViewById(R.id.radioGroupAnunciar);
+		//radioG_tipo = (RadioGroup) findViewById(R.id.radioGroupAnunciar);
 
 		bt_anunciar = (Button) findViewById(R.id.buttonAnunciarCadastrar);
 
@@ -176,12 +179,15 @@ public class AnuncioCaronaActivity extends Activity {
 						edt_horarioOrigem.getText().toString()));
 				nameValuePairs.add(new BasicNameValuePair("horarioDestino",
 						edt_horarioDestino.getText().toString()));
-
-				if (radioG_tipo.getCheckedRadioButtonId() == R.id.radioOferece) {
-					nameValuePairs.add(new BasicNameValuePair("tipo", "1"));
-				} else {
-					nameValuePairs.add(new BasicNameValuePair("tipo", "2"));
-				}
+				nameValuePairs.add(new BasicNameValuePair("vagas",
+						spi_vagas.getSelectedItem().toString()));
+				
+				nameValuePairs.add(new BasicNameValuePair("tipo", "1"));
+//				if (radioG_tipo.getCheckedRadioButtonId() == R.id.radioOferece) {
+//					nameValuePairs.add(new BasicNameValuePair("tipo", "1"));
+//				} else {
+//					nameValuePairs.add(new BasicNameValuePair("tipo", "2"));
+//				}
 
 				String resposta;
 				resposta = CustomHttpPost.postData(Servidor.getServidor()
@@ -321,6 +327,7 @@ public class AnuncioCaronaActivity extends Activity {
 		edt_enderecoDestino.setText("");
 		edt_horarioOrigem.setText("");
 		edt_horarioDestino.setText("");
+		spi_vagas.setSelection(0);
 	}
 
 	public static String getEndOrigem() {

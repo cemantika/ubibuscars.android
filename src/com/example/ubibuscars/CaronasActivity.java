@@ -177,6 +177,7 @@ public class CaronasActivity extends ListActivity {
 			String horarioOrigem = (String) mapAux.get("horario_origem");
 			String horarioDestino = (String) mapAux.get("horario_destino");
 			String tipo = (String) mapAux.get("tipo");
+			String vagasDisponiveis = (String) mapAux.get("vagas_disponiveis");
 
 			// Starting new intent
 			Intent in = new Intent(getApplicationContext(),
@@ -189,6 +190,8 @@ public class CaronasActivity extends ListActivity {
 			in.putExtra("horario_origem", horarioOrigem);
 			in.putExtra("horario_destino", horarioDestino);
 			in.putExtra("tipo", tipo);
+			in.putExtra("vagas_disponiveis", vagasDisponiveis);
+			
 			startActivity(in);
 			return null;
 			
@@ -231,8 +234,12 @@ public class CaronasActivity extends ListActivity {
 					String idUserAux = jsonObject.getString("id_usuario");
 					
 					//mostra so as caronas que nao sejam do usuario logado e ativas
-					if ( (Integer.parseInt(idUserAux) != LoginActivity
-							.getId_usuario()) && (jsonObject.getString("ativo").equals("1")) ) {
+					if ( 
+//							(Integer.parseInt(idUserAux) != LoginActivity.getId_usuario())
+//							&&
+							(jsonObject.getString("ativo").equals("1"))
+						)
+					{
 						String idCarona = jsonObject.getString("id_carona");
 						String idUsuario = jsonObject.getString("id_usuario");
 						String nome = jsonObject.getString("nome");
@@ -243,6 +250,9 @@ public class CaronasActivity extends ListActivity {
 								.getString("horario_origem");
 						String horarioDestino = jsonObject
 								.getString("horario_destino");
+						String vagasDisponiveis = jsonObject
+								.getString("vagas_disponiveis");
+						
 						String tipo = null;
 						if (jsonObject.getString("tipo").equals("1")) {
 							tipo = "Oferece";
@@ -260,6 +270,8 @@ public class CaronasActivity extends ListActivity {
 						map.put("endereco_destino", endDestino);
 						map.put("horario_origem", horarioOrigem);
 						map.put("horario_destino", horarioDestino);
+						map.put("vagas_disponiveis", vagasDisponiveis);
+						
 
 						if (jsonObject.getString("tipo").equals("1")) {
 							map.put("imagem", R.drawable.oferece_carona);
@@ -285,11 +297,13 @@ public class CaronasActivity extends ListActivity {
 			
 			aguardeCaronas.dismiss();
 			
-			ListAdapter adapter = new SimpleAdapter(CaronasActivity.this, result,
-					R.layout.list_item, new String[] { "nome", "endereco_origem",
-							"endereco_destino", "imagem" }, new int[] {
-							R.id.TextNomeUsuario, R.id.textEndOrig,
-							R.id.textEndDest, R.id.imageViewTipoCarona });
+			ListAdapter adapter = new SimpleAdapter(
+				CaronasActivity.this,
+				result,
+				R.layout.list_item,
+				new String[] 	{"nome", "endereco_origem","endereco_destino", "imagem", "vagas_disponiveis" },
+				new int[] 		{R.id.TextNomeUsuario, R.id.textEndOrig, R.id.textEndDest, R.id.imageViewTipoCarona, R.id.TextVagasDisponiveis }
+			);
 			setListAdapter(adapter);
 			
 		}
