@@ -64,5 +64,8 @@
         <item>4</item>
     </string-array>
     <string name="hintCadastroCarroParticularNome">nome do carro</string>
+    <string name="btSalvarAlerta">Salvar Alerta</string>
+    <string name="service_name">Busca Alertas</string>
+    <string name="title_activity_alertas">Alertas</string>
 
 </resources>

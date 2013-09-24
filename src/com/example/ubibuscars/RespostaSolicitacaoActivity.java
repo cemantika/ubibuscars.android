@@ -14,13 +14,16 @@ import android.graphics.Bitmap;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class RespostaSolicitacaoActivity extends Activity {
 	
 	private Button bt_aceitar, bt_recusar;
-	private TextView txt_origem, txt_destino, txt_horarioOrigem, txt_horarioDestino, txt_statusPedido, txt_nomeMotorista, txt_nomeCaronista;
+	private ImageButton bt_alerta;
+	private TextView txt_origem, txt_destino, txt_horarioOrigem, txt_horarioDestino, txt_statusPedido, txt_nomeMotorista, 
+	txt_nomeCaronista, txt_enviarAlerta;
 	private ImageView img_motorista, img_caronista;
 	String idSolicitacao;
 
@@ -47,6 +50,9 @@ public class RespostaSolicitacaoActivity extends Activity {
 		
 		bt_aceitar = (Button) findViewById(R.id.buttonRespostaAceitar);
 		bt_recusar = (Button) findViewById(R.id.buttonRespostaRecusar);
+		
+		bt_alerta = (ImageButton) findViewById(R.id.buttonAlertas);
+		txt_enviarAlerta = (TextView) findViewById(R.id.EnviarAlerta);
 		
 		txt_destino = (TextView) findViewById(R.id.textViewRespostaDestino);
 		txt_origem = (TextView) findViewById(R.id.textViewRespostaOrigem);
@@ -83,11 +89,23 @@ public class RespostaSolicitacaoActivity extends Activity {
 		if(idUsuarioSolicita.equals(String.valueOf(LoginActivity.getId_usuario()))){
 			bt_aceitar.setVisibility(View.INVISIBLE);
 			bt_recusar.setVisibility(View.INVISIBLE);
+			bt_alerta.setVisibility(View.VISIBLE);
+			txt_enviarAlerta.setVisibility(View.VISIBLE);
 		}else{
 			bt_aceitar.setVisibility(View.VISIBLE);
 			bt_recusar.setVisibility(View.VISIBLE);
+			bt_alerta.setVisibility(View.INVISIBLE);
+			txt_enviarAlerta.setVisibility(View.INVISIBLE);
 		}
 		
+		bt_alerta.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				Intent i = new Intent(getBaseContext(), AlertasActivity.class);
+				i.putExtra("idSolicitacao", idSolicitacao);
+	        	startActivity(i);
+			}
+		});
 		
 		
 		bt_aceitar.setOnClickListener(new View.OnClickListener() {
