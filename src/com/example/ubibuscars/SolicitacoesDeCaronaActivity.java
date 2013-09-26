@@ -40,6 +40,7 @@ public class SolicitacoesDeCaronaActivity extends ListActivity {
 				mapAux = solicitacoesList.get(position);
 
 				String idSolicitacao = (String) mapAux.get("id_solicitacao");
+				String idCarona = (String) mapAux.get("id_carona");
 				String id_usuariocarona = (String) mapAux
 						.get("id_usuariocarona");
 				String idUsuarioSolicita = (String) mapAux
@@ -59,6 +60,7 @@ public class SolicitacoesDeCaronaActivity extends ListActivity {
 						RespostaSolicitacaoActivity.class);
 				in.putExtra("idSolicitacao", idSolicitacao);
 				in.putExtra("id_usuariocarona", id_usuariocarona);
+				in.putExtra("id_carona", idCarona);
 				in.putExtra("idUsuarioSolicita", idUsuarioSolicita);
 				in.putExtra("situacao", situacao);
 				in.putExtra("endDestino", endDestino);
@@ -69,6 +71,7 @@ public class SolicitacoesDeCaronaActivity extends ListActivity {
 				in.putExtra("nomeUsuarioSolicita", nomeUsuarioSolicita);
 				startActivity(in);
 
+				
 			}
 		});
 	}
@@ -110,6 +113,8 @@ public class SolicitacoesDeCaronaActivity extends ListActivity {
 							.getString("id_solicitacao");
 					String id_usuariocarona = jsonObject
 							.getString("id_usuariocarona");
+					String idCarona = jsonObject
+							.getString("id_carona");
 					String idUsuarioSolicita = jsonObject
 							.getString("id_usuariosolicita");
 					String situacao = jsonObject.getString("situacao");
@@ -127,6 +132,7 @@ public class SolicitacoesDeCaronaActivity extends ListActivity {
 
 					HashMap<String, Object> map = new HashMap<String, Object>();
 
+					map.put("id_carona", idCarona);
 					map.put("id_solicitacao", idSolicitacao);
 					map.put("id_usuariocarona", id_usuariocarona);
 					map.put("id_usuariosolicita", idUsuarioSolicita);

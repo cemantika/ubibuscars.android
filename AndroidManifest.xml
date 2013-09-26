@@ -116,6 +116,10 @@
             android:name="com.example.ubibuscars.AlertasActivity"
             android:label="@string/title_activity_alertas" >
         </activity>
+        <activity
+            android:name="com.example.ubibuscars.AvaliacaoActivity"
+            android:label="@string/title_activity_avaliacao" >
+        </activity>
         
 		<service
 			android:name="AlertaService"

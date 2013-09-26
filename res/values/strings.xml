@@ -67,5 +67,7 @@
     <string name="btSalvarAlerta">Salvar Alerta</string>
     <string name="service_name">Busca Alertas</string>
     <string name="title_activity_alertas">Alertas</string>
+    <string name="btEnviaAvaliacao">Enviar Avaliação</string>
+    <string name="title_activity_avaliacao">Avaliar</string>
 
 </resources>

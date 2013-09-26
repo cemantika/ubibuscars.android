@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 public class RespostaSolicitacaoActivity extends Activity {
 	
-	private Button bt_aceitar, bt_recusar;
+	private Button bt_aceitar, bt_recusar, bt_avaliar;
 	private ImageButton bt_alerta;
 	private TextView txt_origem, txt_destino, txt_horarioOrigem, txt_horarioDestino, txt_statusPedido, txt_nomeMotorista, 
 	txt_nomeCaronista, txt_enviarAlerta;
@@ -39,7 +39,8 @@ public class RespostaSolicitacaoActivity extends Activity {
 		
 		idSolicitacao = in.getStringExtra("idSolicitacao");
 		String id_usuariocarona = in.getStringExtra("id_usuariocarona");
-		String idUsuarioSolicita = in.getStringExtra("idUsuarioSolicita");
+		final String idUsuarioSolicita = in.getStringExtra("idUsuarioSolicita");
+		final String idCarona = in.getStringExtra("id_carona");
 		String situacao = in.getStringExtra("situacao");
 		String endDestino =in.getStringExtra("endDestino");
 		String horarioDestino = in.getStringExtra("horarioDestino");
@@ -50,6 +51,7 @@ public class RespostaSolicitacaoActivity extends Activity {
 		
 		bt_aceitar = (Button) findViewById(R.id.buttonRespostaAceitar);
 		bt_recusar = (Button) findViewById(R.id.buttonRespostaRecusar);
+		bt_avaliar = (Button) findViewById(R.id.button_avaliarUsuario);
 		
 		bt_alerta = (ImageButton) findViewById(R.id.buttonAlertas);
 		txt_enviarAlerta = (TextView) findViewById(R.id.EnviarAlerta);
@@ -97,6 +99,24 @@ public class RespostaSolicitacaoActivity extends Activity {
 			bt_alerta.setVisibility(View.INVISIBLE);
 			txt_enviarAlerta.setVisibility(View.INVISIBLE);
 		}
+		
+		
+		if(situacao.equals("Solicitacao aceita")){
+			bt_avaliar.setVisibility(View.VISIBLE);
+			
+			bt_avaliar.setOnClickListener(new View.OnClickListener() {
+				
+				public void onClick(View v) {
+					Intent i = new Intent(getBaseContext(), AvaliacaoActivity.class);
+					i.putExtra("idUsuarioSolicita",idUsuarioSolicita);
+					i.putExtra("idCarona", idCarona);
+					startActivity(i);
+				}
+			});
+		}
+		else
+			bt_avaliar.setVisibility(View.INVISIBLE);
+			
 		
 		bt_alerta.setOnClickListener(new View.OnClickListener() {
 			
