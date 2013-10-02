@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="15" />
+        android:targetSdkVersion="18" />
 
     
 	<permission android:name="com.example.ubibuscars.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
@@ -112,8 +112,20 @@
             android:name="com.example.ubibuscars.SobreActivity"
             android:label="@string/title_activity_sobre" >
         </activity>
+        <activity
+            android:name="com.example.ubibuscars.AlertasActivity"
+            android:label="@string/title_activity_alertas" >
+        </activity>
+        <activity
+            android:name="com.example.ubibuscars.AvaliacaoActivity"
+            android:label="@string/title_activity_avaliacao" >
+        </activity>
         
-
+		<service
+			android:name="AlertaService"
+			android:icon="@drawable/cemantika_img"
+			android:label="@string/service_name">
+		</service>
                  <!-- COLOQUE SUA KEY!!!!! -->
 		<meta-data
 		    android:name="com.google.android.maps.v2.API_KEY"
