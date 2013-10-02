@@ -68,8 +68,9 @@ public class MapViewActivity extends FragmentActivity{
 				
 				
 				
-				ProgressDialog progress;
-				progress = ProgressDialog.show(MapViewActivity.this, "", "Aguarde...");
+				//ProgressDialog progress;
+				//progress = ProgressDialog.show(MapViewActivity.this, "", "Aguarde...");
+				
 				Geocoder gc = new Geocoder(MapViewActivity.this, Locale.getDefault());
 				LatLng localizacao = marker.getPosition();
 				HashMap<String, Object> mapAux = new HashMap<String, Object>();
@@ -239,7 +240,7 @@ public class MapViewActivity extends FragmentActivity{
 		@Override
 		protected void onPreExecute() {
 			
-			pontosAguarde.setTitle("Efetuando Login");
+			pontosAguarde.setTitle("Carregando");
 			pontosAguarde.setMessage("Aguarde, por favor...");
 			pontosAguarde.setIndeterminate(true);
 			pontosAguarde.show();

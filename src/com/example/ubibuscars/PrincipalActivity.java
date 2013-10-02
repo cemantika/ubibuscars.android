@@ -31,14 +31,14 @@ public class PrincipalActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewprincipal);
         
+     // inicializa o AlertaService
+        Intent i = new Intent(getBaseContext(), AlertaService.class);
+        i.putExtra("id_usuario", Integer.toString(LoginActivity.getId_usuario()));
+        getBaseContext().startService(i);
+        //-----
+        
         TabHost tabHost = getTabHost();
         
-        
-      
-       
-              
-        
-    
         
         // Tab para anunciar caronas
         tabHost.addTab(tabHost.newTabSpec("Anunciar")
