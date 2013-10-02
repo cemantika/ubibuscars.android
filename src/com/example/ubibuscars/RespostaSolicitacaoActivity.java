@@ -4,11 +4,14 @@ import java.util.ArrayList;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.view.Menu;
@@ -17,6 +20,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RespostaSolicitacaoActivity extends Activity {
 	
@@ -88,6 +92,10 @@ public class RespostaSolicitacaoActivity extends Activity {
 		//img_motorista.setImageBitmap(CustomHttpPost.getImagem(Servidor.getServidor()+"/buscaImagemUsuario.php?cod="+idUsuarioSolicita));
 		//img_caronista.setImageBitmap(CustomHttpPost.getImagem(Servidor.getServidor()+"/buscaImagemUsuario.php?cod="+id_usuariocarona));
 		
+		
+
+		
+		
 		if(idUsuarioSolicita.equals(String.valueOf(LoginActivity.getId_usuario()))){
 			bt_aceitar.setVisibility(View.INVISIBLE);
 			bt_recusar.setVisibility(View.INVISIBLE);
@@ -101,16 +109,22 @@ public class RespostaSolicitacaoActivity extends Activity {
 		}
 		
 		
-		if(situacao.equals("Solicitacao aceita")){
+		//se o usuario logado for o dono da carona, nao pode avaliar
+		if(situacao.equals("Solicitacao aceita") && !(id_usuariocarona.equals(String.valueOf(LoginActivity.getId_usuario())))){
 			bt_avaliar.setVisibility(View.VISIBLE);
+			
 			
 			bt_avaliar.setOnClickListener(new View.OnClickListener() {
 				
 				public void onClick(View v) {
+					
+					VerificaAvaliadorAsync verificaAvaliador = new VerificaAvaliadorAsync();
+					verificaAvaliador.execute(); 
+					
 					Intent i = new Intent(getBaseContext(), AvaliacaoActivity.class);
 					i.putExtra("idUsuarioSolicita",idUsuarioSolicita);
 					i.putExtra("idCarona", idCarona);
-					startActivity(i);
+					//startActivity(i);
 				}
 			});
 		}
@@ -182,6 +196,77 @@ public class RespostaSolicitacaoActivity extends Activity {
 	}
 	
 	
+	
+	
+	public class VerificaAvaliadorAsync extends AsyncTask<Void, Void, Boolean>{
+
+		
+		ProgressDialog aguardeCaronas = new ProgressDialog(RespostaSolicitacaoActivity.this);
+		
+		@Override
+		protected void onPreExecute() {
+			
+			aguardeCaronas.setTitle("Carregando");
+			aguardeCaronas.setMessage("Aguarde, por favor...");
+			aguardeCaronas.setIndeterminate(true);
+			aguardeCaronas.show();
+			
+		}
+		
+		@Override
+		protected Boolean doInBackground(Void... params) {
+			Intent i = getIntent();
+			String idCarona = i.getStringExtra("id_carona");
+			ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+			nameValuePairs.add(new BasicNameValuePair("id_carona", idCarona));
+			
+			String resposta = CustomHttpPost.postData(Servidor.getServidor()+"/verificaAvaliador.php", nameValuePairs);
+			Boolean verifica = false;
+			try {
+				
+				
+				JSONArray jsonArray = new JSONArray(resposta);
+				for (int index = 0; index < jsonArray.length(); index++) {
+					JSONObject jsonObject = jsonArray.getJSONObject(index);
+					
+					String id_user = jsonObject.getString("id_avaliador");
+				
+					
+					if(id_user.equals(String.valueOf(LoginActivity.getId_usuario()))){
+						verifica = true;
+					}
+					
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return verifica;
+			
+			
+		}
+		
+		@Override
+		protected void onPostExecute(Boolean r){
+			aguardeCaronas.dismiss();
+			
+			if(r){
+				Toast toast = Toast.makeText(getApplicationContext(), "Você só pode avaliar cada carona uma vez", 
+						Toast.LENGTH_SHORT);
+				toast.show();
+			}
+			else{
+				Intent previousIntent = getIntent();
+				String idUsuarioSolicita = previousIntent.getStringExtra("idUsuarioSolicita");
+				final String idCarona = previousIntent.getStringExtra("id_carona");
+				
+				Intent i = new Intent(getBaseContext(), AvaliacaoActivity.class);
+				i.putExtra("idUsuarioSolicita",idUsuarioSolicita);
+				i.putExtra("idCarona", idCarona);
+				startActivity(i);
+			}
+		}
+		
+	}
 	
 	public class RespostaSolicitacao extends AsyncTask<String, Void, String>{
 
