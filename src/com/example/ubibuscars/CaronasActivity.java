@@ -9,25 +9,32 @@ import org.json.JSONObject;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Paint.Join;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.SimpleAdapter;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.SimpleAdapter.ViewBinder;
 
 public class CaronasActivity extends ListActivity {
 	JSONArray caronas = null;
 	ArrayList<HashMap<String, Object>> caronaList = new ArrayList<HashMap<String, Object>>();
 
+	private RatingBar nota;
+	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_caronas);
 		
 		ListaCaronas listarCaronas = new ListaCaronas();
 		listarCaronas.execute();
+		
+		nota=(RatingBar) findViewById(R.id.ratingBar1);
 		
 		
 		
@@ -252,6 +259,8 @@ public class CaronasActivity extends ListActivity {
 								.getString("horario_destino");
 						String vagasDisponiveis = jsonObject
 								.getString("vagas_disponiveis");
+						String notaCarona = jsonObject
+								.getString("nota");
 						
 						String tipo = null;
 						if (jsonObject.getString("tipo").equals("1")) {
@@ -271,6 +280,9 @@ public class CaronasActivity extends ListActivity {
 						map.put("horario_origem", horarioOrigem);
 						map.put("horario_destino", horarioDestino);
 						map.put("vagas_disponiveis", vagasDisponiveis);
+						map.put("nota", notaCarona);
+						
+						//nota.setRating(Float.parseFloat(notaCarona));
 						
 
 						if (jsonObject.getString("tipo").equals("1")) {
@@ -297,19 +309,50 @@ public class CaronasActivity extends ListActivity {
 			
 			aguardeCaronas.dismiss();
 			
+
+			
 			ListAdapter adapter = new SimpleAdapter(
 				CaronasActivity.this,
 				result,
 				R.layout.list_item,
-				new String[] 	{"nome", "endereco_origem","endereco_destino", "imagem", "vagas_disponiveis" },
-				new int[] 		{R.id.TextNomeUsuario, R.id.textEndOrig, R.id.textEndDest, R.id.imageViewTipoCarona, R.id.TextVagasDisponiveis }
+				new String[] 	{"nome", "endereco_origem","endereco_destino", "imagem", "vagas_disponiveis", "nota" },
+				new int[] 		{R.id.TextNomeUsuario, R.id.textEndOrig, R.id.textEndDest, R.id.imageViewTipoCarona, 
+						         R.id.TextVagasDisponiveis, R.id.ratingBar1 }
 			);
+			
+			((SimpleAdapter) adapter).setViewBinder(new RateBinder());
 			setListAdapter(adapter);
 			
 		}
 		
 		
 		
+	}
+	
+	
+	//coloca o valor da nota na RatingBar
+	public class RateBinder implements ViewBinder{
+			
+		public boolean setViewValue(View view, Object data, String textRepresentation)
+		{
+			//se a view for a ratingBar, executa aqui, senao usa o binder do ListAdapter
+			if(view.getId() == R.id.ratingBar1){
+				//tratando as notas nulas
+				if(data.equals("null")){
+					RatingBar ratingBar = (RatingBar) view;
+					ratingBar.setRating(0);
+					return true;
+				}
+				
+				String stringVal = (String) data;
+				Float ratingValue = Float.parseFloat(stringVal);
+				RatingBar ratingBar = (RatingBar) view;
+				ratingBar.setRating(ratingValue);
+				return true;	
+			}
+			// TODO Auto-generated method stub
+			return false;
+		}
 	}
 	
 	
