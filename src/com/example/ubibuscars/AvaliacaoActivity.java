@@ -48,6 +48,8 @@ public class AvaliacaoActivity extends Activity {
 				EnviaAvaliacaoAsync avaliacao = new EnviaAvaliacaoAsync();
 				avaliacao.execute();
 				
+				finish();
+				
 			}
 		});
 		
@@ -78,6 +80,10 @@ public class AvaliacaoActivity extends Activity {
 		
 		@Override
 		protected void onPostExecute(String r){
+			//Intent i = new Intent(getBaseContext(), CaronasActivity.class);
+			//startActivity(i);
+			
+			
 			Toast toast = Toast.makeText(getApplicationContext(), r, Toast.LENGTH_SHORT);
 			toast.show();
 		}
