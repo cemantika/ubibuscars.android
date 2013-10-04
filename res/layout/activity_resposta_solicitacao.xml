@@ -155,13 +155,6 @@
         android:layout_alignRight="@+id/buttonRespostaAceitar"
         android:layout_below="@+id/buttonRespostaAceitar"
         android:text="@string/btRespostaRecusar" />
-    
-    <ImageButton
-        android:id="@+id/buttonAlertas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewRespostaStatus"
-        android:src="@drawable/letter_closed" />
     <TextView
         android:id="@+id/EnviarAlerta"
         android:layout_width="wrap_content"
@@ -180,12 +173,20 @@
         android:orientation="vertical" >
     </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/buttonAlertas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/letter_closed" />
+
     <Button
         android:id="@+id/button_avaliarUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
         android:text="Avaliar" />
 
 </RelativeLayout>
