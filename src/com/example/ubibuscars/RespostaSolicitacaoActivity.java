@@ -116,8 +116,8 @@ public class RespostaSolicitacaoActivity extends Activity {
 		
 		
 		//se o usuario logado for o dono da carona, nao pode avaliar
-		if(situacao.equals("Solicitacao aceita") && !(id_usuariocarona.equals(String.valueOf(LoginActivity.getId_usuario())))){
-			bt_avaliar.setVisibility(View.VISIBLE);
+		//if(situacao.equals("Solicitacao aceita") && !(id_usuariocarona.equals(String.valueOf(LoginActivity.getId_usuario())))){
+		//	bt_avaliar.setVisibility(View.VISIBLE);
 			
 			bt_avaliar.setOnClickListener(new View.OnClickListener() {
 				
@@ -126,15 +126,12 @@ public class RespostaSolicitacaoActivity extends Activity {
 					VerificaAvaliadorAsync verificaAvaliador = new VerificaAvaliadorAsync();
 					verificaAvaliador.execute(); 
 					
-					Intent i = new Intent(getBaseContext(), AvaliacaoActivity.class);
-					i.putExtra("idUsuarioSolicita",idUsuarioSolicita);
-					i.putExtra("idCarona", idCarona);
-					//startActivity(i);
+					
 				}
 			});
-		}
-		else
-			bt_avaliar.setVisibility(View.INVISIBLE);
+		//}
+		//else
+			//bt_avaliar.setVisibility(View.INVISIBLE);
 			
 		
 		
@@ -269,10 +266,12 @@ public class RespostaSolicitacaoActivity extends Activity {
 				Intent previousIntent = getIntent();
 				String idUsuarioSolicita = previousIntent.getStringExtra("idUsuarioSolicita");
 				final String idCarona = previousIntent.getStringExtra("id_carona");
+				final String id_usuariocarona = previousIntent.getStringExtra("id_usuariocarona");
 				
 				Intent i = new Intent(getBaseContext(), AvaliacaoActivity.class);
 				i.putExtra("idUsuarioSolicita",idUsuarioSolicita);
 				i.putExtra("idCarona", idCarona);
+				i.putExtra("id_usuarioCarona", id_usuariocarona);
 				startActivity(i);
 			}
 		}

@@ -259,8 +259,10 @@ public class CaronasActivity extends ListActivity {
 								.getString("horario_destino");
 						String vagasDisponiveis = jsonObject
 								.getString("vagas_disponiveis");
-						String notaCarona = jsonObject
-								.getString("nota");
+						String media = jsonObject
+								.getString("media");
+						//String notaCarona = jsonObject
+							//	.getString("nota");
 						
 						String tipo = null;
 						if (jsonObject.getString("tipo").equals("1")) {
@@ -280,7 +282,8 @@ public class CaronasActivity extends ListActivity {
 						map.put("horario_origem", horarioOrigem);
 						map.put("horario_destino", horarioDestino);
 						map.put("vagas_disponiveis", vagasDisponiveis);
-						map.put("nota", notaCarona);
+						map.put("media", media);
+						//map.put("nota", notaCarona);
 						
 						//nota.setRating(Float.parseFloat(notaCarona));
 						
@@ -315,7 +318,7 @@ public class CaronasActivity extends ListActivity {
 				CaronasActivity.this,
 				result,
 				R.layout.list_item,
-				new String[] 	{"nome", "endereco_origem","endereco_destino", "imagem", "vagas_disponiveis", "nota" },
+				new String[] 	{"nome", "endereco_origem","endereco_destino", "imagem", "vagas_disponiveis", "media" },
 				new int[] 		{R.id.TextNomeUsuario, R.id.textEndOrig, R.id.textEndDest, R.id.imageViewTipoCarona, 
 						         R.id.TextVagasDisponiveis, R.id.ratingBar1 }
 			);
