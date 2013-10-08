@@ -8,6 +8,7 @@ import org.apache.http.message.BasicNameValuePair;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,7 +25,8 @@ public class AvaliacaoActivity extends Activity {
 	private EditText mensagemAvaliacao;
 	
 	String idCarona;
-	String idAvaliado;
+	String idSolicita;
+	String idOferece;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,8 @@ public class AvaliacaoActivity extends Activity {
 		Intent i = getIntent();
 		
 		idCarona = i.getStringExtra("idCarona");
-		idAvaliado = i.getStringExtra("idUsuarioSolicita");
+		idSolicita = i.getStringExtra("idUsuarioSolicita");
+		idOferece = i.getStringExtra("id_usuarioCarona");
 		
 		rate_user = (RatingBar) findViewById(R.id.ratingBarAvaliacao);
 		bt_enviarAvaliacao = (Button) findViewById(R.id.buttonEviarAvaliacao);
@@ -63,7 +66,13 @@ public class AvaliacaoActivity extends Activity {
 		protected String doInBackground(Void... params) {
 			ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 			
-			nameValuePairs.add(new BasicNameValuePair("id_avaliado", idAvaliado));
+			if(idOferece.equals(String.valueOf(LoginActivity.getId_usuario()))){
+				nameValuePairs.add(new BasicNameValuePair("id_avaliado", idSolicita));
+			}
+			else 
+				nameValuePairs.add(new BasicNameValuePair("id_avaliado", idOferece));
+			
+			
 			nameValuePairs.add(new BasicNameValuePair("id_carona", idCarona));
 			nameValuePairs.add(new BasicNameValuePair("mensagem",mensagemAvaliacao.getText().toString()));
 			nameValuePairs.add(new BasicNameValuePair("nota",String.valueOf(rate_user.getRating())));
@@ -80,11 +89,12 @@ public class AvaliacaoActivity extends Activity {
 		
 		@Override
 		protected void onPostExecute(String r){
-			//Intent i = new Intent(getBaseContext(), CaronasActivity.class);
-			//startActivity(i);
 			
 			
-			Toast toast = Toast.makeText(getApplicationContext(), r, Toast.LENGTH_SHORT);
+			
+			
+			
+			Toast toast = Toast.makeText(getApplicationContext(), r, Toast.LENGTH_LONG);
 			toast.show();
 		}
 		
