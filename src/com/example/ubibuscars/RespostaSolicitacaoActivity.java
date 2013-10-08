@@ -42,7 +42,7 @@ public class RespostaSolicitacaoActivity extends Activity {
      // Get JSON values from previous intent
 		
 		idSolicitacao = in.getStringExtra("idSolicitacao");
-		String id_usuariocarona = in.getStringExtra("id_usuariocarona");
+		final String id_usuariocarona = in.getStringExtra("id_usuariocarona");
 		final String idUsuarioSolicita = in.getStringExtra("idUsuarioSolicita");
 		final String idCarona = in.getStringExtra("id_carona");
 		String situacao = in.getStringExtra("situacao");
@@ -99,20 +99,25 @@ public class RespostaSolicitacaoActivity extends Activity {
 		if(idUsuarioSolicita.equals(String.valueOf(LoginActivity.getId_usuario()))){
 			bt_aceitar.setVisibility(View.INVISIBLE);
 			bt_recusar.setVisibility(View.INVISIBLE);
-			bt_alerta.setVisibility(View.VISIBLE);
+			//bt_alerta.setVisibility(View.VISIBLE);
 			txt_enviarAlerta.setVisibility(View.VISIBLE);
 		}else{
 			bt_aceitar.setVisibility(View.VISIBLE);
 			bt_recusar.setVisibility(View.VISIBLE);
-			bt_alerta.setVisibility(View.INVISIBLE);
+			//bt_alerta.setVisibility(View.INVISIBLE);
 			txt_enviarAlerta.setVisibility(View.INVISIBLE);
 		}
 		
+		if(situacao.equals("Solicitacao aceita")){
+			bt_alerta.setVisibility(View.VISIBLE);
+		}
+		else
+			bt_alerta.setVisibility(View.INVISIBLE);	
+		
 		
 		//se o usuario logado for o dono da carona, nao pode avaliar
-		if(situacao.equals("Solicitacao aceita") && !(id_usuariocarona.equals(String.valueOf(LoginActivity.getId_usuario())))){
-			bt_avaliar.setVisibility(View.VISIBLE);
-			
+		//if(situacao.equals("Solicitacao aceita") && !(id_usuariocarona.equals(String.valueOf(LoginActivity.getId_usuario())))){
+		//	bt_avaliar.setVisibility(View.VISIBLE);
 			
 			bt_avaliar.setOnClickListener(new View.OnClickListener() {
 				
@@ -121,22 +126,25 @@ public class RespostaSolicitacaoActivity extends Activity {
 					VerificaAvaliadorAsync verificaAvaliador = new VerificaAvaliadorAsync();
 					verificaAvaliador.execute(); 
 					
-					Intent i = new Intent(getBaseContext(), AvaliacaoActivity.class);
-					i.putExtra("idUsuarioSolicita",idUsuarioSolicita);
-					i.putExtra("idCarona", idCarona);
-					//startActivity(i);
+					
 				}
 			});
-		}
-		else
-			bt_avaliar.setVisibility(View.INVISIBLE);
+		//}
+		//else
+			//bt_avaliar.setVisibility(View.INVISIBLE);
 			
+		
 		
 		bt_alerta.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
 				Intent i = new Intent(getBaseContext(), AlertasActivity.class);
 				i.putExtra("idSolicitacao", idSolicitacao);
+				
+				//parte adicionada
+				i.putExtra("idCarona", idCarona);
+				i.putExtra("idUsuarioSolicita",idUsuarioSolicita);
+				i.putExtra("id_usuarioCarona", id_usuariocarona);
 	        	startActivity(i);
 			}
 		});
@@ -258,10 +266,12 @@ public class RespostaSolicitacaoActivity extends Activity {
 				Intent previousIntent = getIntent();
 				String idUsuarioSolicita = previousIntent.getStringExtra("idUsuarioSolicita");
 				final String idCarona = previousIntent.getStringExtra("id_carona");
+				final String id_usuariocarona = previousIntent.getStringExtra("id_usuariocarona");
 				
 				Intent i = new Intent(getBaseContext(), AvaliacaoActivity.class);
 				i.putExtra("idUsuarioSolicita",idUsuarioSolicita);
 				i.putExtra("idCarona", idCarona);
+				i.putExtra("id_usuarioCarona", id_usuariocarona);
 				startActivity(i);
 			}
 		}

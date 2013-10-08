@@ -211,7 +211,7 @@ containing a value of this type.
         public static final int user_profile=0x7f020030;
     }
     public static final class id {
-        public static final int EnviarAlerta=0x7f050052;
+        public static final int EnviarAlerta=0x7f050051;
         public static final int LinearLayout2=0x7f050062;
         public static final int LoginEditText=0x7f050036;
         public static final int RelativeLayout1=0x7f05000d;
@@ -221,7 +221,7 @@ containing a value of this type.
         public static final int TextVagasDisponiveis=0x7f050066;
         public static final int action_settings=0x7f050076;
         public static final int button1=0x7f05003e;
-        public static final int buttonAlertas=0x7f050051;
+        public static final int buttonAlertas=0x7f050052;
         public static final int buttonAnunciarCadastrar=0x7f050018;
         public static final int buttonCadastrar=0x7f050039;
         public static final int buttonCadastroCadastrar=0x7f050027;

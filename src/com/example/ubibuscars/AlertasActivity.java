@@ -37,7 +37,7 @@ public class AlertasActivity extends ListActivity {
 	private EditText edt_alerta;
 	private static final int DIALOG_ALERT = 10;
 	
-	String idSolicitacao, alerta;
+	String idSolicitacao, alerta, idUsuarioSolicita, id_usuarioCarona;
 	int id_usuario;
 	
 	@Override
@@ -47,6 +47,9 @@ public class AlertasActivity extends ListActivity {
 		
 		Intent in = getIntent();
 		idSolicitacao = in.getStringExtra("idSolicitacao");
+		//parte adcicionada
+		idUsuarioSolicita = in.getStringExtra("idUsuarioSolicita");
+		id_usuarioCarona = in.getStringExtra("id_usuarioCarona");
 		
 		id_usuario = LoginActivity.getId_usuario();
 		if(getIntent().getStringExtra("id_usuario") != null ) {
@@ -143,10 +146,20 @@ public class AlertasActivity extends ListActivity {
 			
 			aguardeAlertas.dismiss();
 			
+			HashMap<String, Object> aux = alertasList.get(0);
+			if(aux.get("alerta").equals("ul")){
+				Toast toast = Toast.makeText(getApplicationContext(), "Você não tem nehum alerta salvo.", Toast.LENGTH_SHORT);
+				toast.show();
+			}
+			
+			else{
+			
 			ListAdapter adapter = new SimpleAdapter(AlertasActivity.this, result,
 					R.layout.list_alertas, new String[] { "alerta" }, new int[] {
 							R.id.TextAlerta });
 			setListAdapter(adapter);
+			}
+			
 		}
 	}
 	
@@ -170,6 +183,8 @@ public class AlertasActivity extends ListActivity {
 		protected void onPostExecute(String r){
 			Intent i = new Intent(getBaseContext(), AlertasActivity.class);
 			i.putExtra("id_usuario", id_usuario);
+			i.putExtra("idUsuarioSolicita",idUsuarioSolicita);
+			i.putExtra("id_usuarioCarona", id_usuarioCarona);
         	startActivity(i);
 		}
 	}
@@ -197,11 +212,20 @@ public class AlertasActivity extends ListActivity {
 			if(nome_remetente!=null) {				
 				ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 				nameValuePairs.add(new BasicNameValuePair("id_usuario", String.valueOf(id_usuario)));
-				nameValuePairs.add(new BasicNameValuePair("id_solicitacao", String.valueOf(idSolicitacao)));
+				
+				//parte adicionada
+				if(idUsuarioSolicita.equals(String.valueOf(LoginActivity.getId_usuario()))){
+					nameValuePairs.add(new BasicNameValuePair("idUsuarioSolicita", String.valueOf(id_usuarioCarona)));
+				}
+				else
+					nameValuePairs.add(new BasicNameValuePair("idUsuarioSolicita", String.valueOf(idUsuarioSolicita)));
+				
+				//nameValuePairs.add(new BasicNameValuePair("id_solicitacao", String.valueOf(idSolicitacao)));
 				nameValuePairs.add(new BasicNameValuePair("alerta", alerta));
 				nameValuePairs.add(new BasicNameValuePair("nome_remetente", String.valueOf(nome_remetente)));
 				
 				String resposta = CustomHttpPost.postData(Servidor.getServidor()+"/enviarAlertas.php", nameValuePairs);
+				
 				
 				return resposta;
 			} else {
