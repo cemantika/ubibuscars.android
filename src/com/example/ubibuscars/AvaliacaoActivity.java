@@ -90,10 +90,6 @@ public class AvaliacaoActivity extends Activity {
 		@Override
 		protected void onPostExecute(String r){
 			
-			
-			
-			
-			
 			Toast toast = Toast.makeText(getApplicationContext(), r, Toast.LENGTH_LONG);
 			toast.show();
 		}

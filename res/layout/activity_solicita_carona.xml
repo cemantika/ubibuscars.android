@@ -1,12 +1,12 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-<RelativeLayout android:id="@+id/RelativeLayout1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<RelativeLayout
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="466dp" >
 
     <ImageView
         android:id="@+id/imageViewSolicitacaoFoto"
@@ -133,14 +133,6 @@
         <requestFocus />
     </EditText>
 
-    <Button
-        android:id="@+id/buttonEnviarSolicitacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextSolicitaMensagem"
-        android:layout_centerHorizontal="true"
-        android:text="@string/btSolicitar" />
-
     <TextView
         android:id="@+id/textViewTipoCarona"
         android:layout_width="wrap_content"
@@ -148,6 +140,28 @@
         android:layout_above="@+id/textView2"
         android:layout_alignLeft="@+id/textViewNomeUsuario"
         android:text="Pede/recebe" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextSolicitaMensagem"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/buttonVerAvaliacoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dp"
+            android:text="@string/bt_verAvaliacaoes" />
+
+        <Button
+            android:id="@+id/buttonEnviarSolicitacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btSolicitar" />
+    </LinearLayout>
 
 </RelativeLayout>
 </ScrollView>

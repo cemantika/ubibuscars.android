@@ -225,6 +225,9 @@ public class RespostaSolicitacaoActivity extends Activity {
 		protected Boolean doInBackground(Void... params) {
 			Intent i = getIntent();
 			String idCarona = i.getStringExtra("id_carona");
+			String id_solicita = i.getStringExtra("idUsuarioSolicita");
+			String id_usuariocarona = i.getStringExtra("id_usuariocarona");
+			
 			ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 			nameValuePairs.add(new BasicNameValuePair("id_carona", idCarona));
 			
@@ -238,9 +241,9 @@ public class RespostaSolicitacaoActivity extends Activity {
 					JSONObject jsonObject = jsonArray.getJSONObject(index);
 					
 					String id_user = jsonObject.getString("id_avaliador");
-				
+					String id_avaliado = jsonObject.getString("id_avaliado");
 					
-					if(id_user.equals(String.valueOf(LoginActivity.getId_usuario()))){
+					if( (id_user.equals(String.valueOf(LoginActivity.getId_usuario())) && (id_solicita.equals(id_avaliado)) || ((id_user.equals(String.valueOf(LoginActivity.getId_usuario())) && (id_avaliado.equals(id_usuariocarona))))) ){
 						verifica = true;
 					}
 					
