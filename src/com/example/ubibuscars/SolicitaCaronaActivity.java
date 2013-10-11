@@ -23,11 +23,12 @@ import android.widget.TextView;
 public class SolicitaCaronaActivity extends Activity {
 	
 	private Button bt_solicitar;
+	private Button bt_avaliacoes;
 	private TextView txt_nome, txt_tipoCarona, txt_localOrigem, txt_localDestino, txt_horarioOrigem, txt_horarioDestino, txt_vagasDisponiveis;
 	private EditText edt_mensagem;
 	private ImageView img_usuarioCarona;
 	private String idCarona;
-	String idUsuario;
+	String idUsuario, media, nome;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +43,11 @@ public class SolicitaCaronaActivity extends Activity {
         Intent in = getIntent();
         
      // Get JSON values from previous intent
+        nome = in.getStringExtra("nome");
+        media = in.getStringExtra("media");
         idCarona = in.getStringExtra("idCarona");
         idUsuario = in.getStringExtra("idUsuario");
-        String name = in.getStringExtra("nome");
+        final String name = in.getStringExtra("nome");
         String origem = in.getStringExtra("endereco_origem");
         String destino = in.getStringExtra("endereco_destino");
         String horarioOrigem = in.getStringExtra("horario_origem");
@@ -53,6 +56,7 @@ public class SolicitaCaronaActivity extends Activity {
         String vagasDisponiveis = in.getStringExtra("vagas_disponiveis");        
         
         bt_solicitar = (Button) findViewById(R.id.buttonEnviarSolicitacao);
+        bt_avaliacoes = (Button) findViewById(R.id.buttonVerAvaliacoes);
         
         txt_nome = (TextView) findViewById(R.id.textViewNomeUsuario);
         txt_tipoCarona = (TextView) findViewById(R.id.textViewTipoCarona);
@@ -88,6 +92,19 @@ public class SolicitaCaronaActivity extends Activity {
 			
 		}
         
+        
+        bt_avaliacoes.setOnClickListener(new View.OnClickListener() {
+		
+			public void onClick(View v) {
+				Intent i = new Intent(getApplicationContext(),ListaAvaliacoesActivity.class);
+				i.putExtra("id_avaliado", idUsuario);
+				i.putExtra("nome", name);
+				i.putExtra("media", media);
+				
+				startActivity(i);
+				
+			}
+		});
         
         
         bt_solicitar.setOnClickListener(new View.OnClickListener() {
