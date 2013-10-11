@@ -57,17 +57,21 @@
     <string name="menu_sobre">Sobre</string>
     <string name="title_activity_sobre">SobreActivity</string>
     <string name="hintLugares">Vagas disponíveis:</string>
-	<string-array name="quantidade_vagas">
+
+    <string-array name="quantidade_vagas">
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
     </string-array>
+
     <string name="hintCadastroCarroParticularNome">nome do carro</string>
     <string name="btSalvarAlerta">Salvar Alerta</string>
     <string name="service_name">Busca Alertas</string>
     <string name="title_activity_alertas">Alertas</string>
     <string name="btEnviaAvaliacao">Enviar Avaliação</string>
     <string name="title_activity_avaliacao">Avaliar</string>
+    <string name="bt_verAvaliacaoes">Ver Avaliações</string>
+    <string name="title_activity_lista_avaliacoes">ListaAvaliacoesActivity</string>
 
 </resources>

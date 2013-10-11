@@ -185,6 +185,7 @@ public class CaronasActivity extends ListActivity {
 			String horarioDestino = (String) mapAux.get("horario_destino");
 			String tipo = (String) mapAux.get("tipo");
 			String vagasDisponiveis = (String) mapAux.get("vagas_disponiveis");
+			String media = (String) mapAux.get("media");
 
 			// Starting new intent
 			Intent in = new Intent(getApplicationContext(),
@@ -198,6 +199,7 @@ public class CaronasActivity extends ListActivity {
 			in.putExtra("horario_destino", horarioDestino);
 			in.putExtra("tipo", tipo);
 			in.putExtra("vagas_disponiveis", vagasDisponiveis);
+			in.putExtra("media", media);
 			
 			startActivity(in);
 			return null;
