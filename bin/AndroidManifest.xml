@@ -135,6 +135,10 @@
             android:name="com.example.ubibuscars.ListaAvaliacoesActivity"
             android:label="@string/title_activity_lista_avaliacoes" >
         </activity>
+        <activity
+            android:name="com.example.ubibuscars.DatePickerFragment"
+            android:label="@string/title_activity_date_picker_fragment" >
+        </activity>
     </application>
 
 </manifest>

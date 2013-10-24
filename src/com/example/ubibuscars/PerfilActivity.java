@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import com.example.ubibuscars.AlteraDadosActivity.CarregaDadosAsync;
 
+import Evento.WS.EventoWS;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -84,8 +85,8 @@ public class PerfilActivity extends Activity {
 				JSONObject jsonObject = jsonArray.getJSONObject(0);
 				jsonObj = jsonObject;
 
-				// img_perfil.setImageBitmap(CustomHttpPost.getImagem(Servidor.getServidor()+"/buscaImagemUsuario.php?cod="+LoginActivity.getId_usuario()));
-
+				//img_perfil.setImageBitmap(CustomHttpPost.getImagem(Servidor.getServidor()+"/buscaImagemUsuario.php?cod="+LoginActivity.getId_usuario()));
+				EventoWS.insereEvento(LoginActivity.getId_usuario(), "Abriu a view de Perfil de Usu‡rio");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

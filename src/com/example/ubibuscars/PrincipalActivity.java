@@ -89,13 +89,13 @@ public class PrincipalActivity extends TabActivity {
     public boolean onOptionsItemSelected(MenuItem item){
 	   
 	   switch (item.getItemId()) {
-	       
+	       /*
 	       case R.id.menu_perfil:{
 	    	   Intent perfil = new Intent(getBaseContext(), PerfilActivity.class);
 	    	   startActivity(perfil);
 	    	   return true;
 	       }
-	       
+	       */
 	       case R.id.menu_editarCarona:{
 	    	   Intent minhasCaronas = new Intent(getBaseContext(), MinhasCaronasActivity.class);
 	    	   startActivity(minhasCaronas);

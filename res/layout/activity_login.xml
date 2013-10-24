@@ -25,8 +25,7 @@
         android:layout_marginTop="18dp"
         android:ems="10"
         android:hint="@string/hintCadastroEmail"
-        android:inputType="textEmailAddress"
-        android:text="mjr@gmail.com" >
+        android:inputType="textEmailAddress" >
 
         <requestFocus />
     </EditText>
@@ -40,8 +39,7 @@
         android:layout_below="@+id/LoginEditText"
         android:ems="10"
         android:hint="@string/hintLoginSenha"
-        android:inputType="textPassword"
-        android:text="123456" />
+        android:inputType="textPassword" />
 
     <LinearLayout
         android:layout_width="wrap_content"

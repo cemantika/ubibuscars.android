@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">UbiBusCars</string>
+    <string name="app_name">UbibusCars</string>
     <string name="menu_settings">Editar Perfil</string>
-    <string name="title_activity_login">Login</string>
+    <string name="title_activity_login">UbibusCars</string>
     <string name="hintCadastroNome">nome</string>
     <string name="hintCadastroEmail">email</string>
     <string name="btLoginEntrar">Entrar</string>
@@ -73,5 +73,6 @@
     <string name="title_activity_avaliacao">Avaliar</string>
     <string name="bt_verAvaliacaoes">Ver Avaliações</string>
     <string name="title_activity_lista_avaliacoes">ListaAvaliacoesActivity</string>
+    <string name="title_activity_date_picker_fragment">DatePickerFragment</string>
 
 </resources>

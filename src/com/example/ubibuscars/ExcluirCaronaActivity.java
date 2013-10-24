@@ -5,14 +5,11 @@ import java.util.ArrayList;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
-import com.google.android.gms.internal.bt;
-
+import Evento.WS.EventoWS;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Intent;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -98,8 +95,8 @@ public class ExcluirCaronaActivity extends Activity {
 			
 			String resposta;
 			resposta=CustomHttpPost.postData(Servidor.getServidor()+"/deletaCarona.php", nameValuePairs);
+			EventoWS.insereEvento(LoginActivity.getId_usuario(), "Excluiu uma Carona");
 			
-		
 			return resposta;
 		}
 		

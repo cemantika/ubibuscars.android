@@ -6,6 +6,7 @@ import java.util.Date;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import Evento.WS.EventoWS;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.EditTextPreference;

@@ -1,8 +1,9 @@
 package com.example.ubibuscars;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.json.JSONException;
 
+import Evento.WS.EventoWS;
+import Ubibus.WS.UsuarioWS;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -37,6 +38,10 @@ public class LoginActivity extends Activity {
 		txt_esqSenha = (TextView) findViewById(R.id.textViewEsqueciSenha);
 
 		txt_esqSenha.setOnClickListener(esq_senha);
+		
+		
+		//nao está funcionando, consertar a activity de esq_senha
+		txt_esqSenha.setVisibility(View.INVISIBLE);
 		
 
 		txt_esqSenha.setPaintFlags(txt_esqSenha.getPaintFlags()
@@ -103,27 +108,14 @@ public class LoginActivity extends Activity {
 //			return true;
 			
 			Boolean usuarioExiste = false;
-			String servidorURI = Servidor.getServidor() + "/buscaUsuarios.php";
-			String readJson = CustomHttpPost.readJson(servidorURI);
+			
 			try {
-				JSONArray jsonArray = new JSONArray(readJson);
-
-				for (int i = 0; i < jsonArray.length(); i++) {
-					JSONObject jsonObject = jsonArray.getJSONObject(i);
-					if( (jsonObject.getInt("ativo")== 1)&&(edt_email.getText().toString().equals(jsonObject
-							.getString("email")))
-							&& (edt_senha.getText().toString()
-									.equals(jsonObject.getString("senha")))) {
-						usuarioExiste = true;
-						setId_usuario(Integer.parseInt(jsonObject
-								.getString("id_usuario")));
-						break;
-					}
+				usuarioExiste=UsuarioWS.autenticacaoUsuario(edt_email.getText().toString(), edt_senha.getText().toString());
+				if(usuarioExiste==true){
+					EventoWS.insereEvento(LoginActivity.getId_usuario(), "Logou");
 				}
-
-			}
-
-			catch (Exception e) {
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -140,7 +132,7 @@ public class LoginActivity extends Activity {
 			else{
 				AlertDialog.Builder alertDialog = new AlertDialog.Builder(
 						LoginActivity.this);
-				alertDialog.setTitle("Dados não conferem");
+				alertDialog.setTitle("Dados n‹o conferem");
 				alertDialog.setMessage("Tente novamente.");
 				alertDialog.setNeutralButton("OK", null);
 				alertDialog.show();

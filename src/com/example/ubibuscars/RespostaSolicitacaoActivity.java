@@ -7,6 +7,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import Evento.WS.EventoWS;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -110,10 +111,13 @@ public class RespostaSolicitacaoActivity extends Activity {
 		
 		if(situacao.equals("Solicitacao aceita")){
 			bt_alerta.setVisibility(View.VISIBLE);
+			bt_avaliar.setVisibility(View.VISIBLE);
 		}
-		else
-			bt_alerta.setVisibility(View.INVISIBLE);	
-		
+		else{
+			bt_alerta.setVisibility(View.INVISIBLE);
+			txt_enviarAlerta.setVisibility(View.INVISIBLE);
+			bt_avaliar.setVisibility(View.INVISIBLE);	
+		}
 		
 		//se o usuario logado for o dono da carona, nao pode avaliar
 		//if(situacao.equals("Solicitacao aceita") && !(id_usuariocarona.equals(String.valueOf(LoginActivity.getId_usuario())))){
@@ -261,7 +265,7 @@ public class RespostaSolicitacaoActivity extends Activity {
 			aguardeCaronas.dismiss();
 			
 			if(r){
-				Toast toast = Toast.makeText(getApplicationContext(), "Você só pode avaliar cada carona uma vez", 
+				Toast toast = Toast.makeText(getApplicationContext(), "VocÃª sÃ³ pode avaliar cada carona uma vez", 
 						Toast.LENGTH_SHORT);
 				toast.show();
 			}
@@ -297,7 +301,7 @@ public class RespostaSolicitacaoActivity extends Activity {
 			
 			String resposta;
 			resposta=CustomHttpPost.postData(Servidor.getServidor()+"/responderSolicitacao.php", nameValuePairs);
-			
+			EventoWS.insereEvento(LoginActivity.getId_usuario(), "Respondeu uma solicitaï¿½â€¹o");
 			return resposta;
 		}
 		
