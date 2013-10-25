@@ -1,8 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    
+    <!-- Menu para mostrar e ditar perfil
+    		activity tem erros 
     <item android:id="@+id/menu_perfil"
         android:title="@string/menu_perfil"/>
     
+     -->
     <item android:id="@+id/menu_editarCarona"
         android:title="@string/menu_editarCarona"/>
     

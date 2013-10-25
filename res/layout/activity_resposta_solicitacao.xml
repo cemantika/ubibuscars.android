@@ -1,7 +1,12 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
     tools:context=".RespostaSolicitacaoActivity" >
 
     <LinearLayout
@@ -155,14 +160,6 @@
         android:layout_alignRight="@+id/buttonRespostaAceitar"
         android:layout_below="@+id/buttonRespostaAceitar"
         android:text="@string/btRespostaRecusar" />
-    <TextView
-        android:id="@+id/EnviarAlerta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-        android:layout_alignTop="@+id/buttonAlertas"
-        android:layout_below="@+id/buttonRespostaRecusar"
-        android:text="Enviar Alerta" />
 
 
     <LinearLayout
@@ -177,16 +174,26 @@
         android:id="@+id/buttonAlertas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/buttonRespostaRecusar"
+        android:layout_toLeftOf="@+id/textViewRespostaHorarioDestino"
         android:src="@drawable/letter_closed" />
 
     <Button
         android:id="@+id/button_avaliarUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/buttonAlertas"
+        android:layout_toRightOf="@+id/textViewRespostaStatus"
         android:text="Avaliar" />
 
+    <TextView
+        android:id="@+id/EnviarAlerta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/button_avaliarUsuario"
+        android:text="Enviar Alerta" />
+
 </RelativeLayout>
+
+</ScrollView>

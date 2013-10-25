@@ -6,6 +6,7 @@ import java.util.HashMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import Evento.WS.EventoWS;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -162,7 +163,7 @@ public class SolicitacoesDeCaronaActivity extends ListActivity {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
+			EventoWS.insereEvento(LoginActivity.getId_usuario(), "Abriu view de solicitações");
 			return solicitacoesList;
 
 		}

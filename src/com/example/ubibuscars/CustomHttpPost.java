@@ -41,7 +41,7 @@ public class CustomHttpPost {
 	    HttpResponse response;
 	    HttpEntity entity;
 	    
-	    String resposta = null;
+	    String resposta = "Falha na conexão.";
 		
 		
 		httpclient = new DefaultHttpClient();
@@ -57,11 +57,13 @@ public class CustomHttpPost {
 			
 			//assign executed form container to response
 			response = httpclient.execute(httppost);
-			
-			resposta = response.toString();
-			entity = response.getEntity();
-			resposta = EntityUtils.toString(entity);
-
+			StatusLine statusLine = response.getStatusLine();
+			int statusCode = statusLine.getStatusCode();
+			if (statusCode >= 200 &&  statusCode<=300) {
+				resposta = response.toString();
+				entity = response.getEntity();
+				resposta = EntityUtils.toString(entity);
+			}
 			
 		} catch(Exception e){
 			e.printStackTrace();

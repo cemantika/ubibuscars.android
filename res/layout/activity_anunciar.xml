@@ -3,9 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     
-<RelativeLayout android:id="@+id/RelativeLayout1"
+<RelativeLayout
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="436dp"
     android:orientation="vertical" >
 
     <TextView
@@ -93,15 +94,6 @@
             android:inputType="time" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/linearLayout2"
-        android:text="Vagas disponíveis:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
 	<Spinner
         android:id="@+id/editVagas"
         android:layout_width="wrap_content"
@@ -113,29 +105,49 @@
         android:layout_below="@+id/textView3"
 	/>
     
-    <!-- 
+    <EditText
+        android:id="@+id/editTextAnunciarData"
+        android:focusable="false"
+        android:layout_width="wrap_content"
+        android:hint="data"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout2"
+        android:ems="10"
+        android:inputType="date" />
+	
     <RadioGroup
         android:id="@+id/radioGroupAnunciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout2"
+        android:layout_below="@+id/editTextAnunciarData"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal" >
-
-        <RadioButton
-            android:id="@+id/radioPede"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/radioPede" />
 
         <RadioButton
             android:id="@+id/radioOferece"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="mostraVagas"
             android:text="@string/radioOferece" />
+
+        <RadioButton
+            android:id="@+id/radioPede"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="escondeVagas"
+            android:text="@string/radioPede" />
+
     </RadioGroup>
-    -->
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/radioGroupAnunciar"
+        android:text="Vagas disponíveis:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/buttonAnunciarCadastrar"

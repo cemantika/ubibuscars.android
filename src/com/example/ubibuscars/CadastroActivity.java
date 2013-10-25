@@ -9,6 +9,8 @@ import java.util.List;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+
+import Evento.WS.EventoWS;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -78,8 +80,10 @@ public class CadastroActivity extends Activity {
 			}
 		});
 		
-		bt_mudaFoto.setVisibility(View.INVISIBLE);
+		
+		//botoes de foto invisiveis
 		bt_tiraFoto.setVisibility(View.INVISIBLE);
+		bt_mudaFoto.setVisibility(View.INVISIBLE);
 
 		bt_cadastrar.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -254,18 +258,7 @@ public class CadastroActivity extends Activity {
 		startActivityForResult(intent, REQUEST_CODE);
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 //	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<nAO APAGAR>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	/*
 	@Override
@@ -341,8 +334,7 @@ public class CadastroActivity extends Activity {
 					"0"));
 			
 			
-			//<<<<<<<<<<<<<<<<<<<<<<<<<NAO APAGAR>>>>>>>>>>>>>>>>>>>>
-			/*
+			
 			BitmapDrawable drawable = (BitmapDrawable) img_perfil
 					.getDrawable();
 			bitmap = drawable.getBitmap();
@@ -354,7 +346,7 @@ public class CadastroActivity extends Activity {
 
 			nameValuePairs.add(new BasicNameValuePair("imagem",
 					image_str));
-*/
+
 			
 			
 			
@@ -363,8 +355,9 @@ public class CadastroActivity extends Activity {
 			String resposta;
 			resposta = CustomHttpPost.postData(
 					Servidor.getServidor()
-							+ "/insereUsuarioAndroid.php",
+							+ "/usuario/insere.php",
 					nameValuePairs);
+			
 			return resposta;
 		}
 		
@@ -372,18 +365,16 @@ public class CadastroActivity extends Activity {
 			AlertDialog.Builder alertDialog = new AlertDialog.Builder(
 					CadastroActivity.this);
 			alertDialog.setMessage(r);
-			alertDialog.setPositiveButton("Continuar", new OnClickListener() {
-				
-				public void onClick(DialogInterface dialog, int which) {
-					Intent telaDeLogin = new Intent(CadastroActivity.this,
-							LoginActivity.class);
-					startActivity(telaDeLogin);
-				}
-			});
+			alertDialog.setPositiveButton("Continuar", null);
 			
 			
 			alertDialog.show();
-			apagarDados();
+			
+			if(r.equals("Usuário cadastrado com sucesso")){
+				apagarDados();
+				finish();
+			
+			}
 			
 			
 			

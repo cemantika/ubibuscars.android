@@ -6,6 +6,7 @@ import java.util.HashMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import Evento.WS.EventoWS;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -263,6 +264,8 @@ public class CaronasActivity extends ListActivity {
 								.getString("vagas_disponiveis");
 						String media = jsonObject
 								.getString("media");
+						String data = jsonObject
+								.getString("data");
 						//String notaCarona = jsonObject
 							//	.getString("nota");
 						
@@ -285,6 +288,7 @@ public class CaronasActivity extends ListActivity {
 						map.put("horario_destino", horarioDestino);
 						map.put("vagas_disponiveis", vagasDisponiveis);
 						map.put("media", media);
+						map.put("data", data);
 						//map.put("nota", notaCarona);
 						
 						//nota.setRating(Float.parseFloat(notaCarona));
@@ -297,7 +301,6 @@ public class CaronasActivity extends ListActivity {
 						}
 					
 						caronaList.add(map);
-
 					}
 				}
 
@@ -305,7 +308,7 @@ public class CaronasActivity extends ListActivity {
 				e.printStackTrace();
 			}
 			
-			
+			EventoWS.insereEvento(LoginActivity.getId_usuario(), "Abriu view de caronas");
 			return caronaList;
 		}
 		
@@ -320,9 +323,9 @@ public class CaronasActivity extends ListActivity {
 				CaronasActivity.this,
 				result,
 				R.layout.list_item,
-				new String[] 	{"nome", "endereco_origem","endereco_destino", "imagem", "vagas_disponiveis", "media" },
+				new String[] 	{"nome", "endereco_origem","endereco_destino", "imagem", "vagas_disponiveis", "media", "data" },
 				new int[] 		{R.id.TextNomeUsuario, R.id.textEndOrig, R.id.textEndDest, R.id.imageViewTipoCarona, 
-						         R.id.TextVagasDisponiveis, R.id.ratingBar1 }
+						         R.id.TextVagasDisponiveis, R.id.ratingBar1, R.id.textViewData }
 			);
 			
 			((SimpleAdapter) adapter).setViewBinder(new RateBinder());
