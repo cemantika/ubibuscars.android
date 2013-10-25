@@ -13,12 +13,16 @@ import org.json.JSONObject;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.location.Criteria;
 import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
@@ -26,6 +30,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.maps.MapView;
+import com.google.android.maps.MyLocationOverlay;
 
 public class MapViewActivity extends FragmentActivity{
 	public GoogleMap map;
@@ -51,9 +57,21 @@ public class MapViewActivity extends FragmentActivity{
 		map = fragmentMapa.getMap();
 		
 		
+		LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+		Criteria criteria = new Criteria();
 		
+		String provider = locationManager.getBestProvider(criteria, true);
 		
+		Location myLocation = locationManager.getLastKnownLocation(provider);
 		
+		double latitude = myLocation.getLatitude();
+		double longitude = myLocation.getLongitude();
+		
+		LatLng latLong = new LatLng(latitude, longitude);
+		
+		map.moveCamera(CameraUpdateFactory.newLatLng(latLong));
+		map.animateCamera(CameraUpdateFactory.zoomTo(15));
+		map.setMyLocationEnabled(true);
 		
 	
 		MostraMarkersMapa carregaMarkers = new MostraMarkersMapa();
@@ -303,10 +321,12 @@ public class MapViewActivity extends FragmentActivity{
 				
 				LatLng localizacao = new LatLng(latitude, longitude);
 				
-				map.moveCamera(CameraUpdateFactory.newLatLngZoom(localizacao,
-						15));
 				
-				map.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
+				
+				//map.moveCamera(CameraUpdateFactory.newLatLngZoom(localizacao,
+					//	15));
+				
+			//	map.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
 				
 				String nomePonto = (String) mapAux.get("nome_do_ponto");
 				String descricaoPonto = (String) mapAux.get("descricao");

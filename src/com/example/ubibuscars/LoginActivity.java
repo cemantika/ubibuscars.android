@@ -43,6 +43,8 @@ public class LoginActivity extends Activity {
 		//nao está funcionando, consertar a activity de esq_senha
 		txt_esqSenha.setVisibility(View.INVISIBLE);
 		
+		//cadastrar não vai ser usado nessa versão
+		cadastrar.setVisibility(View.INVISIBLE);
 
 		txt_esqSenha.setPaintFlags(txt_esqSenha.getPaintFlags()
 				| Paint.UNDERLINE_TEXT_FLAG);

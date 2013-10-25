@@ -9,7 +9,7 @@
     <string name="btLoginEntrar">Entrar</string>
     <string name="btLoginCadastar">Cadastre-se</string>
     <string name="hintLoginLogin">login</string>
-    <string name="hintLoginSenha">senha</string>
+    <string name="hintLoginSenha">nascimento(dd/mm/yyyy)</string>
     <string name="bt_tirarFoto">Tirar foto</string>
     <string name="bt_trocarFoto">Trocar Foto</string>
     <string name="hintCadastroLogin">login</string>
